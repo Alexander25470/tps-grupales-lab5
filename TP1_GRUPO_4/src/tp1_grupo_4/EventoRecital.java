@@ -13,6 +13,11 @@ import java.util.Date;
 public class EventoRecital extends Evento{
     private CategoriaRecital categoria;
     private Banda banda;
+
+    @Override
+    public String toString() {
+        return "EventoRecital{" + "categoria=" + categoria + ", banda=" + banda + '}';
+    }
     
     public EventoRecital(CategoriaRecital categoria, Banda banda, String nombre, String TipoEvento, Date diaYFecha, int duracion) {
         
