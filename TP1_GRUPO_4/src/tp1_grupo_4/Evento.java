@@ -81,4 +81,6 @@ public abstract class Evento {
         return "Evento{" + "nombre=" + nombre + ", TipoEvento=" + TipoEvento + ", diaYFecha=" + diaYFecha + ", duracion=" + duracion + '}';
     }
     
+    public abstract String caracteristicaHyE();
+    
 }

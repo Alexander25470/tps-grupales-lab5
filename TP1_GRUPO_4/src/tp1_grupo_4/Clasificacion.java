@@ -18,7 +18,7 @@ public class Clasificacion {
     private int id;
     private String nombre;
 
-    public Clasificacion(int id, String nombre) {
+    public Clasificacion(String nombre) {
         cont++;
         this.id = cont;
         this.nombre = nombre;

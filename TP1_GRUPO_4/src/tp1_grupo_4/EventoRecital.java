@@ -50,4 +50,9 @@ public class EventoRecital extends Evento{
         Evento.cont = cont;
     }
     
+    @Override
+    public String caracteristicaHyE() {
+        return "Se realizan durante la tarde o noche, en su mayoria se trata de un publico mayor a 18 años";
+    }
+    
 }

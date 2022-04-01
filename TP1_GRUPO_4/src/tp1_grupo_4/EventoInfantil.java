@@ -30,4 +30,9 @@ public class EventoInfantil extends Evento{
     public void setSouvenir(boolean souvenir) {
         this.souvenir = souvenir;
     }
+    
+    @Override
+    public String caracteristicaHyE() {
+        return "Se realizan durante la mañana o tarde, en su mayoria se trata de un publico con una edad entre los 6 y 10 años";
+    }
 }

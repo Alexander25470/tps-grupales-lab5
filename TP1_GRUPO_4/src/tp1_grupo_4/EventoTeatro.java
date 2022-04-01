@@ -41,4 +41,10 @@ public class EventoTeatro extends Evento{
     public void setGenero(GeneroTeatral generoTeatral) {
         this.generoTeatral = generoTeatral;
     }
+    
+    @Override
+    public String caracteristicaHyE() {
+        return "Con tendendia a realizarce durante la noche, en su mayoria se trata de un publico mayor a 18 años";
+    }
+    
 }

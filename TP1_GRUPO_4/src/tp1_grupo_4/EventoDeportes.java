@@ -30,4 +30,11 @@ public class EventoDeportes extends Evento{
     public void setDeporte(Deporte deporte) {
         this.deporte = deporte;
     }
+    
+    @Override
+    public String caracteristicaHyE() {
+        return "No tiene una tendencia hacia algun horario, publico de todas las edades";
+    }
+    
+    
 }

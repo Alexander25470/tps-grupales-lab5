@@ -14,7 +14,7 @@ public class Deporte {
     private String nombre;
     private Clasificacion clasificacion;
 
-    public Deporte(int id, String nombre, Clasificacion clasificacion) {
+    public Deporte(String nombre, Clasificacion clasificacion) {
         cont++;
         this.id = cont;
         this.nombre = nombre;

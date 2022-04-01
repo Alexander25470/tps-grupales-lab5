@@ -13,7 +13,7 @@ public class Actor {
     private int id;
     private String nombre;
 
-    public Actor(int id, String nombre) {
+    public Actor(String nombre) {
         cont++;
         this.id = cont;
         this.nombre = nombre;
