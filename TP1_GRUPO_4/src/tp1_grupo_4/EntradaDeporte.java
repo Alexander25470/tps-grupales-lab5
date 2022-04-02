@@ -16,20 +16,7 @@ public class EntradaDeporte extends Evento{
         super(nombre, "Deporte", fechaYHora, duracion);
         this.deporte = deporte;
     }
-
-    public Deporte getDeporte() {
-        return deporte;
-    }
-
-    public void setDeporte(Deporte deporte) {
-        this.deporte = deporte;
-    }
     
-    @Override
-    public String infoHorarioYEdad() {
-        return "No tiene una tendencia hacia algun horario, publico de todas las edades";
-    }
-
     @Override
     public double getPrecio() {
         double precio = 0;
@@ -52,6 +39,20 @@ public class EntradaDeporte extends Evento{
         
         return precio;
     }
+
+    public Deporte getDeporte() {
+        return deporte;
+    }
+
+    public void setDeporte(Deporte deporte) {
+        this.deporte = deporte;
+    }
+    
+    @Override
+    public String infoHorarioYEdad() {
+        return "No tiene una tendencia hacia algun horario, publico de todas las edades";
+    }
+
 
     @Override
     public String toString() {

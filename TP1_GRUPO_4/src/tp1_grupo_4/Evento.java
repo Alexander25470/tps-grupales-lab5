@@ -1,7 +1,6 @@
 package tp1_grupo_4;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 /**
  *
@@ -14,6 +13,7 @@ public abstract class Evento implements IEvento{
     private String nombre;
     private String TipoEvento;
     private LocalDateTime fechaYHora;
+    private int duracion;
 
     public Evento(String nombre, String TipoEvento, LocalDateTime fechaYHora, int duracion) {
         cont++;
@@ -26,8 +26,7 @@ public abstract class Evento implements IEvento{
     
     public abstract String infoHorarioYEdad();
 
-
-    private int duracion;
+    
 
     public int getNumero() {
         return numero;
