@@ -10,7 +10,7 @@ import java.util.Date;
  *
  * @author Usuario
  */
-public class EventoRecital extends Evento{
+public class EntradaRecital extends Evento implements IEvento{
     private CategoriaRecital categoria;
     private Banda banda;
 
@@ -19,9 +19,8 @@ public class EventoRecital extends Evento{
         return "EventoRecital{" + "categoria=" + categoria + ", banda=" + banda + '}';
     }
     
-    public EventoRecital(CategoriaRecital categoria, Banda banda, String nombre, String TipoEvento, Date diaYFecha, int duracion) {
-        
-        super(nombre, TipoEvento, diaYFecha, categoria.getPrecio(), duracion);
+    public EntradaRecital(CategoriaRecital categoria, Banda banda, String nombre, String TipoEvento, Date diaYFecha, int duracion) {
+        super(nombre, TipoEvento, diaYFecha, duracion);
         this.categoria = categoria;
         this.banda = banda;
     }
@@ -51,8 +50,14 @@ public class EventoRecital extends Evento{
     }
     
     @Override
-    public String caracteristicaHyE() {
+    public String infoHorarioYEdad() {
         return "Se realizan durante la tarde o noche, en su mayoria se trata de un publico mayor a 18 años";
     }
+
+    @Override
+    public double getPrecio() {
+        return categoria.getPrecio();
+    }
+    
     
 }

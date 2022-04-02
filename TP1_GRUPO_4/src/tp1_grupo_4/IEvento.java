@@ -9,5 +9,6 @@ package tp1_grupo_4;
  * @author Usuario
  */
 public interface IEvento {
-    
+    public abstract double getPrecio();
+    public abstract String infoHorarioYEdad();
 }

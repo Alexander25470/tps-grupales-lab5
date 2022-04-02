@@ -10,17 +10,20 @@ import java.util.Date;
  *
  * @author Usuario
  */
-public class EventoInfantil extends Evento{
+public class EntradaInfantil extends Evento{
     private boolean souvenir;
-
+    private int edad;
+    private static final int edadInfantil = 8;
+    
     @Override
     public String toString() {
         return "EventoInfantil{" + "souvenir=" + souvenir + '}';
     }
 
-    public EventoInfantil(boolean souvenir, String nombre, String TipoEvento, Date diaYFecha, float precio, int duracion) {
-        super(nombre, TipoEvento, diaYFecha, precio, duracion);
+    public EntradaInfantil(boolean souvenir, String nombre, String TipoEvento, Date diaYFecha, int duracion, int edad) {
+        super(nombre, TipoEvento, diaYFecha, duracion);
         this.souvenir = souvenir;
+        this.edad = edad;
     }
     
     public boolean isSouvenir() {
@@ -32,7 +35,14 @@ public class EventoInfantil extends Evento{
     }
     
     @Override
-    public String caracteristicaHyE() {
+    public String infoHorarioYEdad() {
         return "Se realizan durante la mañana o tarde, en su mayoria se trata de un publico con una edad entre los 6 y 10 años";
     }
+
+    @Override
+    public double getPrecio() {
+        return edad<=edadInfantil?250:500;
+    }
+    
+    
 }

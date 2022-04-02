@@ -6,33 +6,23 @@ import java.util.Date;
  *
  * @author Usuario
  */
-public abstract class Evento {
+public abstract class Evento implements IEvento{
+
     static int cont = 0;
     private int numero;
     private String nombre;
     private String TipoEvento;
     private Date diaYFecha;
-    private float precio;
 
-    public Evento(String nombre, String TipoEvento, Date diaYFecha, float precio, int duracion) {
+    public Evento(String nombre, String TipoEvento, Date diaYFecha, int duracion) {
         cont++;
         this.numero = cont;
         this.nombre = nombre;
         this.TipoEvento = TipoEvento;
         this.diaYFecha = diaYFecha;
-        this.precio = precio;
         this.duracion = duracion;
     }
 
-
-    
-    public float getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(float precio) {
-        this.precio = precio;
-    }
     private int duracion;
 
     public int getNumero() {
@@ -42,7 +32,6 @@ public abstract class Evento {
     public void setNumero(int numero) {
         this.numero = numero;
     }
-    
 
     public String getNombre() {
         return nombre;
@@ -80,7 +69,5 @@ public abstract class Evento {
     public String toString() {
         return "Evento{" + "nombre=" + nombre + ", TipoEvento=" + TipoEvento + ", diaYFecha=" + diaYFecha + ", duracion=" + duracion + '}';
     }
-    
-    public abstract String caracteristicaHyE();
-    
+
 }

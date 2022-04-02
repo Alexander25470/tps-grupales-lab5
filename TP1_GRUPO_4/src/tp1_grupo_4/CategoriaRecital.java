@@ -42,7 +42,7 @@ public class CategoriaRecital {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    public float getPrecio(){
+    public double getPrecio(){
         return nombre.compareToIgnoreCase("VIP")==0?800:500;
     }
 

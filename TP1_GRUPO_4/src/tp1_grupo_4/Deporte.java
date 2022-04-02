@@ -11,19 +11,19 @@ package tp1_grupo_4;
 public class Deporte {
     static int cont = 0;
     private int id;
-    private String nombre;
+    private String tipo;
     private Clasificacion clasificacion;
 
-    public Deporte(String nombre, Clasificacion clasificacion) {
+    public Deporte(String tipo, Clasificacion clasificacion) {
         cont++;
         this.id = cont;
-        this.nombre = nombre;
+        this.tipo = tipo;
         this.clasificacion = clasificacion;
     }
 
     @Override
     public String toString() {
-        return "Deporte{" + "id=" + id + ", nombre=" + nombre + ", clasificacion=" + clasificacion + '}';
+        return "Deporte{" + "id=" + id + ", tipo=" + tipo + ", clasificacion=" + clasificacion + '}';
     }
 
     public int getId() {
@@ -34,14 +34,14 @@ public class Deporte {
         this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getTipo() {
+        return tipo;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
-
+    
     public Clasificacion getClasificacion() {
         return clasificacion;
     }

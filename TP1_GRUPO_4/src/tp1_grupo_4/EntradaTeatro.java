@@ -11,7 +11,7 @@ import java.util.List;
  *
  * @author Usuario
  */
-public class EventoTeatro extends Evento{
+public class EntradaTeatro extends Evento{
     private GeneroTeatral generoTeatral;
     private List<Actor> actores;
 
@@ -20,8 +20,8 @@ public class EventoTeatro extends Evento{
         return "EventoTeatro{" + "generoTeatral=" + generoTeatral + ", actores=" + actores + '}';
     }
 
-    public EventoTeatro(GeneroTeatral generoTeatral, List<Actor> actores, String nombre, String TipoEvento, Date diaYFecha, float precio, int duracion) {
-        super(nombre, TipoEvento, diaYFecha, precio, duracion);
+    public EntradaTeatro(GeneroTeatral generoTeatral, List<Actor> actores, String nombre, String TipoEvento, Date diaYFecha, int duracion) {
+        super(nombre, TipoEvento, diaYFecha, duracion);
         this.generoTeatral = generoTeatral;
         this.actores = actores;
     }
@@ -43,8 +43,13 @@ public class EventoTeatro extends Evento{
     }
     
     @Override
-    public String caracteristicaHyE() {
+    public String infoHorarioYEdad() {
         return "Con tendendia a realizarce durante la noche, en su mayoria se trata de un publico mayor a 18 años";
+    }
+
+    @Override
+    public double getPrecio() {
+        return 1350.50;
     }
     
 }
