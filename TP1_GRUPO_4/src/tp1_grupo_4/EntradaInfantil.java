@@ -4,6 +4,7 @@
  */
 package tp1_grupo_4;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
@@ -20,8 +21,8 @@ public class EntradaInfantil extends Evento{
         return "EventoInfantil{" + "souvenir=" + souvenir + '}';
     }
 
-    public EntradaInfantil(boolean souvenir, String nombre, String TipoEvento, Date diaYFecha, int duracion, int edad) {
-        super(nombre, TipoEvento, diaYFecha, duracion);
+    public EntradaInfantil(boolean souvenir, String nombre,  LocalDateTime fechaYHora, int duracion, int edad) {
+        super(nombre, "Infantil", fechaYHora, duracion);
         this.souvenir = souvenir;
         this.edad = edad;
     }

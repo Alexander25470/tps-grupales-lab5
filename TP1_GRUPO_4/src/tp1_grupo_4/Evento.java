@@ -1,5 +1,6 @@
 package tp1_grupo_4;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
@@ -12,14 +13,14 @@ public abstract class Evento implements IEvento{
     private int numero;
     private String nombre;
     private String TipoEvento;
-    private Date diaYFecha;
+    private LocalDateTime fechaYHora;
 
-    public Evento(String nombre, String TipoEvento, Date diaYFecha, int duracion) {
+    public Evento(String nombre, String TipoEvento, LocalDateTime fechaYHora, int duracion) {
         cont++;
         this.numero = cont;
         this.nombre = nombre;
         this.TipoEvento = TipoEvento;
-        this.diaYFecha = diaYFecha;
+        this.fechaYHora = fechaYHora;
         this.duracion = duracion;
     }
 
@@ -49,12 +50,12 @@ public abstract class Evento implements IEvento{
         this.TipoEvento = TipoEvento;
     }
 
-    public Date getDiaYFecha() {
-        return diaYFecha;
+    public LocalDateTime getFechaYHora() {
+        return fechaYHora;
     }
 
-    public void setDiaYFecha(Date diaYFecha) {
-        this.diaYFecha = diaYFecha;
+    public void setFechaYHora(LocalDateTime fechaYHora) {
+        this.fechaYHora = fechaYHora;
     }
 
     public int getDuracion() {
@@ -67,7 +68,7 @@ public abstract class Evento implements IEvento{
 
     @Override
     public String toString() {
-        return "Evento{" + "nombre=" + nombre + ", TipoEvento=" + TipoEvento + ", diaYFecha=" + diaYFecha + ", duracion=" + duracion + '}';
+        return "Evento{" + "nombre=" + nombre + ", TipoEvento=" + TipoEvento + ", diaYFecha=" + fechaYHora + ", duracion=" + duracion + '}';
     }
 
 }

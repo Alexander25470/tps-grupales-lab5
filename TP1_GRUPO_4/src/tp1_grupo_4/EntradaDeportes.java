@@ -4,8 +4,7 @@
  */
 package tp1_grupo_4;
 
-import java.util.Date;
-
+import java.time.LocalDateTime;
 /**
  *
  * @author Usuario
@@ -18,8 +17,8 @@ public class EntradaDeportes extends Evento{
         return "EventoDeportes{" + "deporte=" + deporte + '}';
     }
 
-    public EntradaDeportes(Deporte deporte, String nombre, String TipoEvento, Date diaYFecha, int duracion) {
-        super(nombre, TipoEvento, diaYFecha, duracion);
+    public EntradaDeportes(Deporte deporte, String nombre,  LocalDateTime fechaYHora, int duracion) {
+        super(nombre, "Deporte", fechaYHora, duracion);
         this.deporte = deporte;
     }
 

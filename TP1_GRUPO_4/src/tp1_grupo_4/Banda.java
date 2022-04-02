@@ -4,6 +4,7 @@
  */
 package tp1_grupo_4;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -42,7 +43,10 @@ public class Banda {
 
     @Override
     public String toString() {
-        return "Banda{" + "id=" + id + ", nombre=" + nombre + ", bandasDeSoporte=" + bandasDeSoporte + '}';
+        if(bandasDeSoporte.isEmpty()){
+            return "{" + "id=" + id + ", nombre=" + nombre + '}';
+        }
+        return "{" + "id=" + id + ", nombre=" + nombre + ", bandasDeSoporte=" + bandasDeSoporte + '}';
     }
 
     public Banda(String nombre, List<Banda> bandasDeSoporte) {
@@ -50,6 +54,13 @@ public class Banda {
         this.id = cont;
         this.nombre = nombre;
         this.bandasDeSoporte = bandasDeSoporte;
+    }
+    
+    public Banda(String nombre) {
+        cont++;
+        this.id = cont;
+        this.nombre = nombre;
+        this.bandasDeSoporte = new ArrayList<>();
     }
     
 }

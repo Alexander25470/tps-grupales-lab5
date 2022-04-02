@@ -4,7 +4,7 @@
  */
 package tp1_grupo_4;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -20,8 +20,8 @@ public class EntradaTeatro extends Evento{
         return "EventoTeatro{" + "generoTeatral=" + generoTeatral + ", actores=" + actores + '}';
     }
 
-    public EntradaTeatro(GeneroTeatral generoTeatral, List<Actor> actores, String nombre, String TipoEvento, Date diaYFecha, int duracion) {
-        super(nombre, TipoEvento, diaYFecha, duracion);
+    public EntradaTeatro(GeneroTeatral generoTeatral, List<Actor> actores, String nombre, LocalDateTime fechaYHora, int duracion) {
+        super(nombre, "Teatro", fechaYHora, duracion);
         this.generoTeatral = generoTeatral;
         this.actores = actores;
     }

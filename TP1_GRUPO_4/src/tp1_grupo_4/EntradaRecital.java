@@ -4,7 +4,7 @@
  */
 package tp1_grupo_4;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 /**
  *
@@ -14,13 +14,8 @@ public class EntradaRecital extends Evento implements IEvento{
     private CategoriaRecital categoria;
     private Banda banda;
 
-    @Override
-    public String toString() {
-        return "EventoRecital{" + "categoria=" + categoria + ", banda=" + banda + '}';
-    }
-    
-    public EntradaRecital(CategoriaRecital categoria, Banda banda, String nombre, String TipoEvento, Date diaYFecha, int duracion) {
-        super(nombre, TipoEvento, diaYFecha, duracion);
+    public EntradaRecital(CategoriaRecital categoria, Banda banda, String nombre,LocalDateTime fechaYHora, int duracion) {
+        super(nombre, "Recital", fechaYHora, duracion);
         this.categoria = categoria;
         this.banda = banda;
     }
@@ -57,6 +52,11 @@ public class EntradaRecital extends Evento implements IEvento{
     @Override
     public double getPrecio() {
         return categoria.getPrecio();
+    }
+
+    @Override
+    public String toString() {
+        return "EntradaRecital{" + "categoria=" + categoria + ", banda=" + banda + ", precio="+categoria.getPrecio()+'}';
     }
     
     
