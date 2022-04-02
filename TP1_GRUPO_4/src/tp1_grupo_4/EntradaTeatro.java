@@ -13,29 +13,32 @@ import java.util.List;
  */
 public class EntradaTeatro extends Evento{
     private GeneroTeatral generoTeatral;
-    private List<Actor> actores;
+    private List<Actor> actoresPrincipales;
 
-    @Override
-    public String toString() {
-        return "EventoTeatro{" + "generoTeatral=" + generoTeatral + ", actores=" + actores + '}';
-    }
-
-    public EntradaTeatro(GeneroTeatral generoTeatral, List<Actor> actores, String nombre, LocalDateTime fechaYHora, int duracion) {
+    public EntradaTeatro(GeneroTeatral generoTeatral, List<Actor> actoresPrincipales, String nombre, LocalDateTime fechaYHora, int duracion) {
         super(nombre, "Teatro", fechaYHora, duracion);
         this.generoTeatral = generoTeatral;
-        this.actores = actores;
+        this.actoresPrincipales = actoresPrincipales;
     }
 
     public GeneroTeatral getGenero() {
         return generoTeatral;
     }
 
-    public List<Actor> getActores() {
-        return actores;
+    public GeneroTeatral getGeneroTeatral() {
+        return generoTeatral;
     }
 
-    public void setActores(List<Actor> actores) {
-        this.actores = actores;
+    public void setGeneroTeatral(GeneroTeatral generoTeatral) {
+        this.generoTeatral = generoTeatral;
+    }
+
+    public List<Actor> getActoresPrincipales() {
+        return actoresPrincipales;
+    }
+
+    public void setActoresPrincipales(List<Actor> actoresPrincipales) {
+        this.actoresPrincipales = actoresPrincipales;
     }
 
     public void setGenero(GeneroTeatral generoTeatral) {
@@ -50,6 +53,11 @@ public class EntradaTeatro extends Evento{
     @Override
     public double getPrecio() {
         return 1350.50;
+    }
+    
+    @Override
+    public String toString() {
+        return super.toString()+ "genero teatral: " + generoTeatral.getNombre() + ", actores:" + actoresPrincipales + ", Precio: $" + getPrecio();
     }
     
 }

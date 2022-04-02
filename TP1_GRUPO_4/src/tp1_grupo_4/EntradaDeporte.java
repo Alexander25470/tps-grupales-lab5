@@ -9,15 +9,10 @@ import java.time.LocalDateTime;
  *
  * @author Usuario
  */
-public class EntradaDeportes extends Evento{
+public class EntradaDeporte extends Evento{
     private Deporte deporte;
 
-    @Override
-    public String toString() {
-        return "EventoDeportes{" + "deporte=" + deporte + '}';
-    }
-
-    public EntradaDeportes(Deporte deporte, String nombre,  LocalDateTime fechaYHora, int duracion) {
+    public EntradaDeporte(Deporte deporte, String nombre, LocalDateTime fechaYHora, int duracion) {
         super(nombre, "Deporte", fechaYHora, duracion);
         this.deporte = deporte;
     }
@@ -57,4 +52,12 @@ public class EntradaDeportes extends Evento{
         
         return precio;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + deporte + ", Precio: $"+ getPrecio();
+    }
+    
+    
+    
 }

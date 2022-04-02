@@ -23,7 +23,7 @@ public class Deporte {
 
     @Override
     public String toString() {
-        return "Deporte{" + "id=" + id + ", tipo=" + tipo + ", clasificacion=" + clasificacion + '}';
+        return "Tipo: "+ tipo + ", "+ clasificacion;
     }
 
     public int getId() {

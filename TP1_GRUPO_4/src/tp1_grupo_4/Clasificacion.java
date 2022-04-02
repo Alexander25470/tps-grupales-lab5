@@ -10,11 +10,6 @@ package tp1_grupo_4;
  */
 public class Clasificacion {
     static int cont = 0;
-
-    @Override
-    public String toString() {
-        return "Clasificacion{" + "id=" + id + ", nombre=" + nombre + '}';
-    }
     private int id;
     private String nombre;
 
@@ -38,5 +33,10 @@ public class Clasificacion {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+    
+    @Override
+    public String toString() {
+        return "Clasificacion: " + nombre;
     }
 }

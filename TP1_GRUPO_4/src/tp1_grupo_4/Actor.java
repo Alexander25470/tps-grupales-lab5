@@ -21,7 +21,7 @@ public class Actor {
 
     @Override
     public String toString() {
-        return "Actor{" + "id=" + id + ", nombre=" + nombre + '}';
+        return "nombre: " + nombre;
     }
 
     public int getId() {

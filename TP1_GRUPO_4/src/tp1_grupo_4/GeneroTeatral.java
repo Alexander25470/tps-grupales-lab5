@@ -9,16 +9,11 @@ package tp1_grupo_4;
  * @author alexb
  */
 public class GeneroTeatral {
-    static int cont = 0;
+    private static int cont = 0;
     private int id;
-
-    @Override
-    public String toString() {
-        return "GeneroTeatral{" + "id=" + id + ", nombre=" + nombre + '}';
-    }
     private String nombre;
 
-    public GeneroTeatral(int id, String nombre) {
+    public GeneroTeatral(String nombre) {
         cont++;
         this.id = cont;
         this.nombre = nombre;
@@ -38,5 +33,10 @@ public class GeneroTeatral {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+    
+    @Override
+    public String toString() {
+        return "GeneroTeatral{" + "id=" + id + ", nombre=" + nombre + '}';
     }
 }
