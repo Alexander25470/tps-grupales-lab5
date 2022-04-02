@@ -44,9 +44,9 @@ public class Banda {
     @Override
     public String toString() {
         if(bandasDeSoporte.isEmpty()){
-            return "{" + "id=" + id + ", nombre=" + nombre + '}';
+            return "Nombre: " + nombre;
         }
-        return "{" + "id=" + id + ", nombre=" + nombre + ", bandasDeSoporte=" + bandasDeSoporte + '}';
+        return  nombre + ", Bandas de soporte: " + bandasDeSoporte;
     }
 
     public Banda(String nombre, List<Banda> bandasDeSoporte) {

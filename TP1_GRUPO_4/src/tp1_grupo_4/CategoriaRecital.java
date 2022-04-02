@@ -48,7 +48,7 @@ public class CategoriaRecital {
 
     @Override
     public String toString() {
-        return "CategoriaRecital{" + "id=" + id + ", nombre=" + nombre + '}';
+        return nombre ;
     }
     
     

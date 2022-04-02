@@ -24,8 +24,8 @@ public class TP1_GRUPO_4 {
         CategoriaRecital catRecitalNoVip = new CategoriaRecital("NO vip");
         
         // bandas de soporte
-        Banda bandaSoporte1 = new Banda("banda soporte 1");
-        Banda bandaSoporte2 = new Banda("banda soporte 2");
+        Banda bandaSoporte1 = new Banda("Banda soporte 1");
+        Banda bandaSoporte2 = new Banda("Banda soporte 2");
         List<Banda> bandasSoporte = new ArrayList<>();
         bandasSoporte.add(bandaSoporte1);
         bandasSoporte.add(bandaSoporte2);
@@ -40,14 +40,19 @@ public class TP1_GRUPO_4 {
         System.out.println(eventoRecitalVip.toString());
         System.out.println(eventoRecitalNoVip.toString());
         
-        // Emtrada Infantil
+        // Entrada Infantil
         Evento eventoInfantil = new EntradaInfantil(true,"Evento infantil 1",LocalDateTime.parse("2022-06-01T10:50:00"),5,8);
         Evento eventoInfantil2 = new EntradaInfantil(false,"Evento infantil 2",LocalDateTime.parse("2022-06-02T10:50:00"),5,9);
         
         System.out.println(eventoInfantil.toString());
-        System.out.println(eventoInfantil2.toString());
-        
+        System.out.println(eventoInfantil2.toString());     
         //
+        
+        
+        
+        
+        
+        
     }
     
 }

@@ -56,7 +56,7 @@ public class EntradaRecital extends Evento implements IEvento{
 
     @Override
     public String toString() {
-        return "EntradaRecital{" + "categoria=" + categoria + ", banda=" + banda + ", precio="+categoria.getPrecio()+'}';
+        return super.toString() + "Nombre categoria: " + categoria + ", Banda: " + banda + ", Precio: $"+categoria.getPrecio();
     }
     
     
