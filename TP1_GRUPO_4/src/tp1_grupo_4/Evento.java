@@ -68,7 +68,8 @@ public abstract class Evento implements IEvento{
 
     @Override
     public String toString() {
-        return "Evento{" + "nombre=" + nombre + ", TipoEvento=" + TipoEvento + ", diaYFecha=" + fechaYHora + ", duracion=" + duracion + '}';
+        return "Nro Entrada: " + numero +", Nombre: " + nombre + ", Tipo de evento: " + TipoEvento + 
+                ", Dia y Hora: " + fechaYHora + ", Duracion: " + duracion +" HS, ";
     }
 
 }

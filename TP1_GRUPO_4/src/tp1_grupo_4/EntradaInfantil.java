@@ -15,11 +15,14 @@ public class EntradaInfantil extends Evento{
     private boolean souvenir;
     private int edad;
     private static final int edadInfantil = 8;
-    
+
     @Override
     public String toString() {
-        return "EventoInfantil{" + "souvenir=" + souvenir + '}';
+        return super.toString() + contieneSouvenir() + ", Edad: " + edad + ", Precio: $"+ getPrecio();
     }
+
+    
+    
 
     public EntradaInfantil(boolean souvenir, String nombre,  LocalDateTime fechaYHora, int duracion, int edad) {
         super(nombre, "Infantil", fechaYHora, duracion);
@@ -27,8 +30,8 @@ public class EntradaInfantil extends Evento{
         this.edad = edad;
     }
     
-    public boolean isSouvenir() {
-        return souvenir;
+    public boolean isSouvenir() {  
+        return souvenir;   
     }
 
     public void setSouvenir(boolean souvenir) {
@@ -45,5 +48,8 @@ public class EntradaInfantil extends Evento{
         return edad<=edadInfantil?250:500;
     }
     
+    public String contieneSouvenir(){      
+        return souvenir?"Contiene Souvenir":"No contiene Souvenir";    
+    }
     
 }
