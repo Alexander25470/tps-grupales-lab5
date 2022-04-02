@@ -9,7 +9,7 @@ package tp1_grupo_4;
  * @author alexb
  */
 public class Actor {
-    static int cont = 0;
+    private static int cont = 0;
     private int id;
     private String nombre;
 
@@ -40,3 +40,4 @@ public class Actor {
         this.nombre = nombre;
     }
 }
+

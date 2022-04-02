@@ -91,7 +91,9 @@ public class TP1_GRUPO_4 {
         System.out.println(eventoTeatroTeatro.toString());
         System.out.println(eventoComedia.toString());
         imprimirSeparador();
+        //---------------------------------
         // Deportes
+        //---------------------------------
         
         // Clasificacion deporte
         Clasificacion clasificacionInternacional = new Clasificacion("Internacional");
@@ -134,6 +136,4 @@ public class TP1_GRUPO_4 {
         imprimirSeparador2();
         
     }
-    
-    
 }

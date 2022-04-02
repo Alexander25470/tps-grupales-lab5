@@ -35,14 +35,6 @@ public class EntradaRecital extends Evento implements IEvento{
     public void setBanda(Banda banda) {
         this.banda = banda;
     }
-
-    public static int getCont() {
-        return cont;
-    }
-
-    public static void setCont(int cont) {
-        Evento.cont = cont;
-    }
     
     @Override
     public String infoHorarioYEdad() {

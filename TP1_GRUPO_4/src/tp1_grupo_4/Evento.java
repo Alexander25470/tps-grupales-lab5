@@ -9,7 +9,7 @@ import java.util.Date;
  */
 public abstract class Evento implements IEvento{
 
-    static int cont = 0;
+    private static int cont = 0;
     private int numero;
     private String nombre;
     private String TipoEvento;
@@ -23,6 +23,9 @@ public abstract class Evento implements IEvento{
         this.fechaYHora = fechaYHora;
         this.duracion = duracion;
     }
+    
+    public abstract String infoHorarioYEdad();
+
 
     private int duracion;
 
@@ -71,5 +74,6 @@ public abstract class Evento implements IEvento{
         return "Nro Entrada: " + numero +", Nombre: " + nombre + ", Tipo de evento: " + TipoEvento + 
                 ", Dia y Hora: " + fechaYHora + ", Duracion: " + duracion +" HS, ";
     }
-
+    
+    
 }

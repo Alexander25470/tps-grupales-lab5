@@ -9,7 +9,7 @@ package tp1_grupo_4;
  * @author Usuario
  */
 public class CategoriaRecital {
-    static int cont = 0;
+    private static int cont = 0;
     private int id;
     private String nombre;
 
