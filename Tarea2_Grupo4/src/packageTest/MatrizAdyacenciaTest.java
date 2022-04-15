@@ -35,7 +35,7 @@ public class MatrizAdyacenciaTest {
 	}
 	
 	@Test
-	void eliminarElementoSimetriaTest() 
+	void eliminarElementoSimetricoTest() 
 	{
 		_matrizAdyacencia.eliminarElemento(3, 2);
 		boolean resultado = _matrizAdyacencia.existeElemento(2, 3);
