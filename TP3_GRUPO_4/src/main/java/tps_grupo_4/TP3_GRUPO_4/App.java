@@ -7,6 +7,7 @@ import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
 
 import tps_grupo4.TP3_GRUPO_4.entidad.Genero;
+import tps_grupo4.TP3_GRUPO_4.entidad.Nacionalidad;
 
 
 public class App 
@@ -28,7 +29,13 @@ public class App
     	genero.setId(0);
     	genero.setDescripcion("test");
     	
-    	session.save(genero);
+    	Nacionalidad nacionalidad = new Nacionalidad();
+    	nacionalidad.setId(0);
+    	nacionalidad.setDescripcion("pais1");
+    	
+    	
+     	session.save(genero);
+    	session.save(nacionalidad);
     	
     	session.getTransaction().commit();
     	session.close();

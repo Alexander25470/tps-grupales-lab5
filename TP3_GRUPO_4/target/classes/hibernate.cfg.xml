@@ -13,5 +13,6 @@
         
         
         <mapping class="tps_grupo4.TP3_GRUPO_4.entidad.Genero"/>
+        <mapping class="tps_grupo4.TP3_GRUPO_4.entidad.Nacionalidad"/>
     </session-factory>
 </hibernate-configuration>
