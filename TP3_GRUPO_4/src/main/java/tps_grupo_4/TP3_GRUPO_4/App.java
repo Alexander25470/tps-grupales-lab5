@@ -17,7 +17,7 @@ import tps_grupo4.TP3_GRUPO_4.entidad.Autor;
 import tps_grupo4.TP3_GRUPO_4.entidad.Genero;
 import tps_grupo4.TP3_GRUPO_4.entidad.Libro;
 import tps_grupo4.TP3_GRUPO_4.entidad.Nacionalidad;
-
+import tps_grupo4.TP3_GRUPO_4.entidad.Biblioteca;
 
 public class App 
 {
@@ -47,12 +47,18 @@ public class App
     	nacionalidad.setDescripcion("pais1");
     	
     	Autor autor = new Autor();
-    	
     	autor.setId(0);
     	autor.setNombre("nombre 1");
     	autor.setApellido("Apellido 1");
     	autor.setEmail("nombre@nombre.com");
     	autor.setNacionalidad(nacionalidad);
+    	
+    	Biblioteca biblioteca = new Biblioteca();
+    	biblioteca.setId(1);
+    	biblioteca.setLibro("Titulo 1");
+    	Date fechaalta = new SimpleDateFormat("dd/MM/yyyy").parse("15/10/2021");
+    	biblioteca.setFechaDeAlta(fechaalta);
+    	biblioteca.setEstado(1);
     	
     	List<Genero> generosLibro1 = new ArrayList<Genero>();
     	generosLibro1.add(genero);
@@ -65,6 +71,7 @@ public class App
      	session.save(genero1);
     	session.save(nacionalidad);
     	session.save(autor);
+    	session.save(biblioteca);
     	session.save(libro1);
     	
     	session.getTransaction().commit();

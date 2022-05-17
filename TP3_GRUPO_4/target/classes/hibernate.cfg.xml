@@ -16,5 +16,6 @@
         <mapping class="tps_grupo4.TP3_GRUPO_4.entidad.Nacionalidad"/>
         <mapping class="tps_grupo4.TP3_GRUPO_4.entidad.Autor"/>
         <mapping class="tps_grupo4.TP3_GRUPO_4.entidad.Libro"/>
+        <mapping class="tps_grupo4.TP3_GRUPO_4.entidad.Biblioteca"/>
     </session-factory>
 </hibernate-configuration>
