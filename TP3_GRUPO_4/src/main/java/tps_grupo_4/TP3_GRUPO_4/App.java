@@ -1,9 +1,8 @@
 package tps_grupo_4.TP3_GRUPO_4;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -34,45 +33,83 @@ public class App
     	session.beginTransaction();
     	
     	
-    	Genero genero = new Genero();
-    	genero.setId(0);
-    	genero.setDescripcion("test");
+    	Genero genero = new Genero(0, "genero 0");
+    	Genero genero1 = new Genero(1, "genero 1");
+    	Genero genero2 = new Genero(2, "genero 2");
+    	Genero genero3 = new Genero(3, "genero 3");
+    	Genero genero4 = new Genero(4, "genero 4");
     	
-    	Genero genero1 = new Genero();
-    	genero1.setId(1);
-    	genero1.setDescripcion("genero 1");
+    	Nacionalidad nacionalidad = new Nacionalidad(0, "pais");
+    	Nacionalidad nacionalidad1 = new Nacionalidad(1, "pais 1");
+    	Nacionalidad nacionalidad2 = new Nacionalidad(2, "pais 2");
+    	Nacionalidad nacionalidad3 = new Nacionalidad(3, "pais 3");
+    	Nacionalidad nacionalidad4 = new Nacionalidad(4, "pais 4");
+
+
     	
-    	Nacionalidad nacionalidad = new Nacionalidad();
-    	nacionalidad.setId(0);
-    	nacionalidad.setDescripcion("pais1");
+    	Autor autor = new Autor(0, "nombre", "Apellido 1", nacionalidad, "nombre@nombre.com");
+    	Autor autor1 = new Autor(1, "nombre 1", "Apellido 1", nacionalidad, "nombre1@nombre1.com");
+    	Autor autor2 = new Autor(2, "nombre 2", "Apellido 2", nacionalidad, "nombre2@nombre2.com");
+    	Autor autor3 = new Autor(3, "nombre 3", "Apellido 3", nacionalidad, "nombre3@nombre3.com");
+    	Autor autor4 = new Autor(4, "nombre 4", "Apellido 4", nacionalidad, "nombre4@nombre4.com");
+
     	
-    	Autor autor = new Autor();
-    	autor.setId(0);
-    	autor.setNombre("nombre 1");
-    	autor.setApellido("Apellido 1");
-    	autor.setEmail("nombre@nombre.com");
-    	autor.setNacionalidad(nacionalidad);
+    	Date fechaLibro = new SimpleDateFormat("dd/MM/yyyy").parse("01/12/2022");
+    	Libro libro = new Libro("ISBN0", "Titulo 1", fechaLibro, "Idioma 1", 50, autor, "descripcion", Arrays.asList(genero, genero1));
     	
-    	Biblioteca biblioteca = new Biblioteca();
-    	biblioteca.setId(1);
-    	biblioteca.setLibro("Titulo 1");
-    	Date fechaalta = new SimpleDateFormat("dd/MM/yyyy").parse("15/10/2021");
-    	biblioteca.setFechaDeAlta(fechaalta);
-    	biblioteca.setEstado(1);
+    	Date fechaLibro1 = new SimpleDateFormat("dd/MM/yyyy").parse("01/02/2020");
+    	Libro libro1 = new Libro("ISBN1", "Titulo 1", fechaLibro1, "Idioma 1", 50, autor1, "descripcion", Arrays.asList(genero, genero1));
     	
-    	List<Genero> generosLibro1 = new ArrayList<Genero>();
-    	generosLibro1.add(genero);
-    	generosLibro1.add(genero1);
-    	Date test = new SimpleDateFormat("dd/MM/yyyy").parse("01/12/2022");
-    	Libro libro1 = new Libro("ISBN1", "Titulo 1", test, "Idioma 1", 50, autor, "descripcion", generosLibro1);
+    	Date fechaLibro2 = new SimpleDateFormat("dd/MM/yyyy").parse("01/10/2015");
+    	Libro libro2 = new Libro("ISBN2", "Titulo 1", fechaLibro2, "Idioma 1", 50, autor2, "descripcion", Arrays.asList(genero, genero1));
     	
+    	Date fechaLibro3 = new SimpleDateFormat("dd/MM/yyyy").parse("01/08/2010");
+    	Libro libro3 = new Libro("ISBN3", "Titulo 1", fechaLibro3, "Idioma 1", 50, autor3, "descripcion", Arrays.asList(genero, genero1));
+    	
+    	Date fechaLibro4 = new SimpleDateFormat("dd/MM/yyyy").parse("01/06/2005");
+    	Libro libro4 = new Libro("ISBN4", "Titulo 1", fechaLibro4, "Idioma 1", 50, autor4, "descripcion", Arrays.asList(genero, genero1));
+    	
+    	
+    	Date fechaAltaLibro = new SimpleDateFormat("dd/MM/yyyy").parse("15/10/2021");
+    	Biblioteca biblioteca = new Biblioteca(0, libro, fechaAltaLibro, 1);
+    	
+    	Date fechaAltaLibro1 = new SimpleDateFormat("dd/MM/yyyy").parse("15/10/2021");
+    	Biblioteca biblioteca1 = new Biblioteca(1, libro1, fechaAltaLibro1, 1);
+    	
+    	Date fechaAltaLibro2 = new SimpleDateFormat("dd/MM/yyyy").parse("15/10/2021");
+    	Biblioteca biblioteca2 = new Biblioteca(2, libro2, fechaAltaLibro2, 1);
+    	
+    	Date fechaAltaLibro3 = new SimpleDateFormat("dd/MM/yyyy").parse("15/10/2021");
+    	Biblioteca biblioteca3 = new Biblioteca(3, libro3, fechaAltaLibro3, 1);
+    	
+    	Date fechaAltaLibro4 = new SimpleDateFormat("dd/MM/yyyy").parse("15/10/2021");
+    	Biblioteca biblioteca4 = new Biblioteca(4, libro4, fechaAltaLibro4, 1);
     	
      	session.save(genero);
      	session.save(genero1);
+     	session.save(genero2);
+     	session.save(genero3);
+     	session.save(genero4);
     	session.save(nacionalidad);
+    	session.save(nacionalidad1);
+    	session.save(nacionalidad2);
+    	session.save(nacionalidad3);
+    	session.save(nacionalidad4);
     	session.save(autor);
+    	session.save(autor1);
+    	session.save(autor2);
+    	session.save(autor3);
+    	session.save(autor4);
     	session.save(biblioteca);
+    	session.save(biblioteca1);
+    	session.save(biblioteca2);
+    	session.save(biblioteca3);
+    	session.save(biblioteca4);
+    	session.save(libro);
     	session.save(libro1);
+    	session.save(libro2);
+    	session.save(libro3);
+    	session.save(libro4);
     	
     	session.getTransaction().commit();
     	session.close();

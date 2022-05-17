@@ -30,6 +30,18 @@ public class Autor implements Serializable{
 	private String email;
 	public Autor() {
 	}
+	
+	
+	public Autor(int id, String nombre, String apellido, Nacionalidad nacionalidad, String email) {
+		super();
+		this.id = id;
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.nacionalidad = nacionalidad;
+		this.email = email;
+	}
+
+
 	public int getId() {
 		return id;
 	}

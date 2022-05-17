@@ -21,6 +21,12 @@ public class Genero implements Serializable{
 	
 	public Genero() {
 	}
+	
+	public Genero(int id, String descripcion) {
+		super();
+		this.id = id;
+		this.descripcion = descripcion;
+	}
 
 	public int getId() {
 		return id;

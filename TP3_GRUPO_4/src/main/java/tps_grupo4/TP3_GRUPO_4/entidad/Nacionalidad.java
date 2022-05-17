@@ -22,6 +22,12 @@ public class Nacionalidad implements Serializable{
 	public Nacionalidad() {
 	}
 
+	public Nacionalidad(int id, String descripcion) {
+		super();
+		this.id = id;
+		this.descripcion = descripcion;
+	}
+
 	public int getId() {
 		return id;
 	}
