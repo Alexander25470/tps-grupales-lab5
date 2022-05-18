@@ -104,6 +104,12 @@ public class Libro implements Serializable{
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+
+	@Override
+	public String toString() {
+		return "Libro [ISBN=" + ISBN + ", titulo=" + titulo + ", fechaDeLanzamiento=" + fechaDeLanzamiento + ", idioma="
+				+ idioma + ", cantidadDePaginas=" + cantidadDePaginas + ", descripcion=" + descripcion + "]";
+	}
 	
 	
 }

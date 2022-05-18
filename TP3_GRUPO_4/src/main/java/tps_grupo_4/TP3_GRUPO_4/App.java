@@ -1,10 +1,8 @@
 package tps_grupo_4.TP3_GRUPO_4;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
-import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -23,6 +21,7 @@ public class App
 {
     public static void main( String[] args ) throws Exception
     {
+    	
     	SessionFactory sessionFactory;
     	
     	Configuration configuration = new Configuration();
@@ -32,7 +31,6 @@ public class App
     	Session session = sessionFactory.openSession();
     	
     	session.beginTransaction();
-    	
     	
     	Genero genero = new Genero(0, "genero 0");
     	Genero genero1 = new Genero(1, "genero 1");
