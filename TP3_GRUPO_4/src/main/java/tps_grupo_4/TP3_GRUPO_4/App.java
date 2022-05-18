@@ -118,20 +118,24 @@ public class App
     	
     	sessionFactory.close();
     	 	
-    	//Modificar biblioteca
+    	// Crear una biblioteca
     	Biblioteca bibli = new Biblioteca();
-    	bibli.setId(0);
+    	bibli.setId(5);
     	bibli.setLibro(libro);
     	Date fechaAltaLibro11 = new SimpleDateFormat("dd/MM/yyyy").parse("15/10/2020");
     	bibli.setFechaDeAlta(fechaAltaLibro11);
     	bibli.setEstado(1); 	
+    	DaoHibernate.add(bibli);
+    	
+    	// Modificar la biblioteca
+    	bibli.setEstado(2);
     	DaoHibernate.update(bibli);
     	
-    	//Leer biblioteca
+    	//Leer una biblioteca
     	Biblioteca bibli1 = DaoHibernate.leerUno(1);
     	System.out.println("La biblioteca tiene los siguientes datos: "+bibli.toString());   	
     	
-    	//Eliminar biblioteca
+    	//Eliminar una biblioteca
     	Biblioteca bibli3 = new Biblioteca();
     	bibli3.setId(3);
     	DaoHibernate.delete(bibli3);
