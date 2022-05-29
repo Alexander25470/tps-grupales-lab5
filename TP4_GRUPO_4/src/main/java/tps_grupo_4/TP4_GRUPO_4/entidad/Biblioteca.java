@@ -1,4 +1,4 @@
-package tps_grupo4.TP3_GRUPO_4.entidad;
+package tps_grupo_4.TP4_GRUPO_4.entidad;
 
 import java.io.Serializable;
 

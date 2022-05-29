@@ -1,4 +1,4 @@
-package tps_grupo_4.TP3_GRUPO_4;
+package tps_grupo_4.TP4_GRUPO_4;
 
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
@@ -11,11 +11,11 @@ import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
 
 import dao.DaoHibernate;
-import tps_grupo4.TP3_GRUPO_4.entidad.Autor;
-import tps_grupo4.TP3_GRUPO_4.entidad.Genero;
-import tps_grupo4.TP3_GRUPO_4.entidad.Libro;
-import tps_grupo4.TP3_GRUPO_4.entidad.Nacionalidad;
-import tps_grupo4.TP3_GRUPO_4.entidad.Biblioteca;
+import tps_grupo_4.TP4_GRUPO_4.entidad.Autor;
+import tps_grupo_4.TP4_GRUPO_4.entidad.Biblioteca;
+import tps_grupo_4.TP4_GRUPO_4.entidad.Genero;
+import tps_grupo_4.TP4_GRUPO_4.entidad.Libro;
+import tps_grupo_4.TP4_GRUPO_4.entidad.Nacionalidad;
 
 public class App 
 {

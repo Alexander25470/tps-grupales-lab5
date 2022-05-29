@@ -1,7 +1,8 @@
 package dao;
 
 import org.hibernate.Session;
-import tps_grupo4.TP3_GRUPO_4.entidad.Biblioteca;
+
+import tps_grupo_4.TP4_GRUPO_4.entidad.Biblioteca;
 
 public class DaoHibernate {
 
