@@ -35,10 +35,17 @@ public class App2 {
     	
 		List<Libro> listaLibros= (List<Libro>) session.createQuery("FROM Libro l ORDER BY l.ISBN").list();
     	
+		System.out.println("Libros ordenados por ISBN:");
     	for (Libro libro : listaLibros) {
-      	  System.out.println(" Usuarios: "+ libro.toString()+" ");	
+      	  System.out.println(libro.toString()+" ");	
 		}
     	
+    	List<Object[]> listaLibrosPrestados = (List<Object[]>) session.createQuery("SELECT bi.id, bi.fechaDeAlta, bi.libro.titulo FROM Biblioteca as bi INNER JOIN bi.libro WHERE bi.Estado = 2").list();
+    	System.out.println("Libros prestados");
+    	for (Object[] obj : listaLibrosPrestados) {
+
+        	System.out.println("ID Biblioteca: "+ obj[0].toString()+", Fecha de alta: "+ obj[1]+ ", titulo: "+ obj[2]);		
+  		}
     	sessionFactory.close();
     	 	
 
