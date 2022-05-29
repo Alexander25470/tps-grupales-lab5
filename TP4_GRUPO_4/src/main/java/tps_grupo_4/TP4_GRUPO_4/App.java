@@ -43,7 +43,7 @@ public class App
     	Nacionalidad nacionalidad2 = new Nacionalidad(2, "pais 2");
     	Nacionalidad nacionalidad3 = new Nacionalidad(3, "pais 3");
     	Nacionalidad nacionalidad4 = new Nacionalidad(4, "pais 4");
-
+    	Nacionalidad nacionalidad5 = new Nacionalidad(5, "Argentina");
 
     	
     	Autor autor = new Autor(0, "nombre", "Apellido 1", nacionalidad, "nombre@nombre.com");
@@ -51,7 +51,7 @@ public class App
     	Autor autor2 = new Autor(2, "nombre 2", "Apellido 2", nacionalidad, "nombre2@nombre2.com");
     	Autor autor3 = new Autor(3, "nombre 3", "Apellido 3", nacionalidad, "nombre3@nombre3.com");
     	Autor autor4 = new Autor(4, "nombre 4", "Apellido 4", nacionalidad, "nombre4@nombre4.com");
-
+    	Autor autor5 = new Autor(5, "nombre 5", "Apellido 5", nacionalidad5, "nombre5@nombre5.com");
     	
     	Date fechaLibro = new SimpleDateFormat("dd/MM/yyyy").parse("01/12/2022");
     	Libro libro = new Libro("ISBN0", "Titulo 1", fechaLibro, "Idioma 1", 50, autor, "descripcion", Arrays.asList(genero, genero1));
@@ -94,11 +94,13 @@ public class App
     	session.save(nacionalidad2);
     	session.save(nacionalidad3);
     	session.save(nacionalidad4);
+    	session.save(nacionalidad5);
     	session.save(autor);
     	session.save(autor1);
     	session.save(autor2);
     	session.save(autor3);
     	session.save(autor4);
+    	session.save(autor5);
     	session.save(biblioteca);
     	session.save(biblioteca1);
     	session.save(biblioteca2);

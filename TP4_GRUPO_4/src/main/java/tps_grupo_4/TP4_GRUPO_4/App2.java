@@ -47,9 +47,9 @@ public class App2 {
         	System.out.println("ID Biblioteca: "+ obj[0].toString()+", Fecha de alta: "+ obj[1]+ ", titulo: "+ obj[2]);		
   		}
     		
-    	List<Autor> listaAutores= (List<Autor>) session.createQuery("FROM Autor where idNacionalidad = 0").list();
+    	List<Autor> listaAutores= (List<Autor>) session.createQuery("FROM Autor where idNacionalidad = 5").list();
     	
-    	System.out.println("Autor numero 0:");
+    	System.out.println("Autores Argentinos:");
     	for (Autor aut : listaAutores) {
       	  System.out.println(aut.toString()+" ");	
 		}
