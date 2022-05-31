@@ -1,10 +1,14 @@
 package tps_grupo_4.TP4_GRUPO_4.entidad;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -18,6 +22,9 @@ public class Genero implements Serializable{
 	private int id;
 	@Column
 	private String descripcion;
+	
+	@ManyToMany(mappedBy = "generos", fetch= FetchType.EAGER)
+	private List<Libro> libros; 
 	
 	public Genero() {
 	}
@@ -40,6 +47,11 @@ public class Genero implements Serializable{
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
+	
+	public List<Libro> getLibros() {
+		return libros;
+	}
+
 	@Override
 	public String toString() {
 		return "Genero [id=" + id + ", descripcion=" + descripcion + "]";

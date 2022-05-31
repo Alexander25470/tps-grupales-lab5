@@ -33,26 +33,73 @@ public class App2 {
     	
     	session.beginTransaction();
     	
-		List<Libro> listaLibros= (List<Libro>) session.createQuery("FROM Libro l ORDER BY l.ISBN").list();
+    	System.out.println("--------------------------------------------------------");
+		System.out.println("EJERCICIO 1");
+		System.out.println("--------------------------------------------------------");
     	
+		List<Libro> listaLibros= (List<Libro>) session.createQuery("FROM Libro l ORDER BY l.ISBN").list();
+		
+		
 		System.out.println("Libros ordenados por ISBN:");
     	for (Libro libro : listaLibros) {
       	  System.out.println(libro.toString()+" ");	
 		}
     	
+    	
+    	System.out.println("--------------------------------------------------------");
+		System.out.println("EJERCICIO 2");
+		System.out.println("--------------------------------------------------------");
     	List<Object[]> listaLibrosPrestados = (List<Object[]>) session.createQuery("SELECT bi.id, bi.fechaDeAlta, bi.libro.titulo FROM Biblioteca as bi INNER JOIN bi.libro WHERE bi.Estado = 2").list();
     	System.out.println("Libros prestados");
     	for (Object[] obj : listaLibrosPrestados) {
 
         	System.out.println("ID Biblioteca: "+ obj[0].toString()+", Fecha de alta: "+ obj[1]+ ", titulo: "+ obj[2]);		
   		}
-    		
-    	List<Autor> listaAutores= (List<Autor>) session.createQuery("FROM Autor where idNacionalidad = 5").list();
+    	
+    	System.out.println("--------------------------------------------------------");
+		System.out.println("EJERCICIO 3");
+		System.out.println("--------------------------------------------------------");
+    	
+    	List<Autor> listaAutores= (List<Autor>) session.createQuery("FROM Autor a where a.nacionalidad.descripcion = 'Argentina'").list();
     	
     	System.out.println("Autores Argentinos:");
     	for (Autor aut : listaAutores) {
       	  System.out.println(aut.toString()+" ");	
 		}
+    	
+    	System.out.println("--------------------------------------------------------");
+		System.out.println("EJERCICIO 4");
+		System.out.println("--------------------------------------------------------");
+    	
+    	Libro libroISBN123456= (Libro) session.createQuery("FROM Libro l where l.ISBN=12345").uniqueResult();
+    	
+    	System.out.println("Libro con ISBN 12345");	
+    	if(libroISBN123456 != null)
+    	{
+    		System.out.println(libroISBN123456.toString()+" ");	
+    		
+    	}
+    	
+    	
+    	System.out.println("--------------------------------------------------------");
+		System.out.println("EJERCICIO 5");
+		System.out.println("--------------------------------------------------------");
+    	
+		int libroMayorISBN= (int)(Integer)session.createQuery("SELECT l.ISBN FROM Libro l ORDER BY l.ISBN DESC").setMaxResults(1).uniqueResult();
+    	
+    	System.out.println("Libro con mayor ISBN: " + libroMayorISBN);
+    	
+    	
+    	System.out.println("--------------------------------------------------------");
+		System.out.println("EJERCICIO 6");
+		System.out.println("--------------------------------------------------------");
+    	
+    	List<Genero> listaLibrosPorGenero = (List<Genero>) session.createQuery("FROM Genero").list();
+    	System.out.println("Libros prestados");
+    	for (Genero genero : listaLibrosPorGenero) {
+
+        	System.out.println("Id genero:" + genero.getId()+ " Descripcion: " + genero.getDescripcion() + " Cantidad de libros: " + genero.getLibros().size());		
+  		}
     	
     	sessionFactory.close();
     	

@@ -54,19 +54,19 @@ public class App
     	Autor autor5 = new Autor(5, "nombre 5", "Apellido 5", nacionalidad5, "nombre5@nombre5.com");
     	
     	Date fechaLibro = new SimpleDateFormat("dd/MM/yyyy").parse("01/12/2022");
-    	Libro libro = new Libro("ISBN0", "Titulo 1", fechaLibro, "Idioma 1", 50, autor, "descripcion", Arrays.asList(genero, genero1));
+    	Libro libro = new Libro(12345, "Titulo 1", fechaLibro, "Idioma 1", 50, autor, "descripcion", Arrays.asList(genero, genero1));
     	
     	Date fechaLibro1 = new SimpleDateFormat("dd/MM/yyyy").parse("01/02/2020");
-    	Libro libro1 = new Libro("ISBN1", "Titulo 1", fechaLibro1, "Idioma 1", 50, autor1, "descripcion", Arrays.asList(genero, genero1));
+    	Libro libro1 = new Libro(12346, "Titulo 1", fechaLibro1, "Idioma 1", 50, autor1, "descripcion", Arrays.asList(genero, genero1));
     	
     	Date fechaLibro2 = new SimpleDateFormat("dd/MM/yyyy").parse("01/10/2015");
-    	Libro libro2 = new Libro("ISBN2", "Titulo 1", fechaLibro2, "Idioma 1", 50, autor2, "descripcion", Arrays.asList(genero, genero1));
+    	Libro libro2 = new Libro(12347, "Titulo 1", fechaLibro2, "Idioma 1", 50, autor2, "descripcion", Arrays.asList(genero, genero1));
     	
     	Date fechaLibro3 = new SimpleDateFormat("dd/MM/yyyy").parse("01/08/2010");
-    	Libro libro3 = new Libro("ISBN3", "Titulo 1", fechaLibro3, "Idioma 1", 50, autor3, "descripcion", Arrays.asList(genero, genero1));
+    	Libro libro3 = new Libro(12348, "Titulo 1", fechaLibro3, "Idioma 1", 50, autor3, "descripcion", Arrays.asList(genero, genero1));
     	
     	Date fechaLibro4 = new SimpleDateFormat("dd/MM/yyyy").parse("01/06/2005");
-    	Libro libro4 = new Libro("ISBN4", "Titulo 1", fechaLibro4, "Idioma 1", 50, autor4, "descripcion", Arrays.asList(genero, genero1));
+    	Libro libro4 = new Libro(12349, "Titulo 1", fechaLibro4, "Idioma 1", 50, autor4, "descripcion", Arrays.asList(genero, genero1));
     	
     	
     	Date fechaAltaLibro = new SimpleDateFormat("dd/MM/yyyy").parse("15/10/2021");

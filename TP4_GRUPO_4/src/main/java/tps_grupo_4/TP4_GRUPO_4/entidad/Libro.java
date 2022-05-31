@@ -22,7 +22,7 @@ public class Libro implements Serializable{
 	
 	@Id
 	@Column
-	private String ISBN;
+	private int ISBN;
 	@Column
 	private String titulo;
 	@Column
@@ -42,7 +42,7 @@ public class Libro implements Serializable{
 	public Libro() {
 	}
 	
-	public Libro(String iSBN, String titulo, Date fechaDeLanzamiento, String idioma, int cantidadDePaginas, Autor autor,
+	public Libro(int iSBN, String titulo, Date fechaDeLanzamiento, String idioma, int cantidadDePaginas, Autor autor,
 			String descripcion, List<Genero> generos) {
 		ISBN = iSBN;
 		this.titulo = titulo;
@@ -53,10 +53,10 @@ public class Libro implements Serializable{
 		this.descripcion = descripcion;
 		this.generos = generos;
 	}
-	public String getISBN() {
+	public int getISBN() {
 		return ISBN;
 	}
-	public void setISBN(String iSBN) {
+	public void setISBN(int iSBN) {
 		ISBN = iSBN;
 	}
 	public String getTitulo() {
@@ -108,8 +108,11 @@ public class Libro implements Serializable{
 	@Override
 	public String toString() {
 		return "Libro [ISBN=" + ISBN + ", titulo=" + titulo + ", fechaDeLanzamiento=" + fechaDeLanzamiento + ", idioma="
-				+ idioma + ", cantidadDePaginas=" + cantidadDePaginas + ", descripcion=" + descripcion + "]";
+				+ idioma + ", cantidadDePaginas=" + cantidadDePaginas + ", autor=" + autor + ", descripcion="
+				+ descripcion + ", generos=" + generos + "]";
 	}
+
+
 	
 	
 }
