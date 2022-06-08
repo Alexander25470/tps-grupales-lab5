@@ -5,9 +5,21 @@
 	http://www.springframework.org/schema/beans/spring-beans.xsd">
 	
 	 
-	<bean id="usuarioPepe" class="entidad.Usuario">
+	<bean id="usuarioPepe" class="entidad.Usuario" scope="singleton">
 		<property name="usuario" value="Pepe"></property>
 		<property name="contrasenia" value="123"></property>
+	</bean>
+	
+	<bean id="configHibernate" class="dao.ConfigHibernate" scope="prototype">
+	</bean>
+	
+	<bean id="usuarioDao" class="dao.UsuarioDao" scope="singleton">
+		<constructor-arg index="0" type="ConfigHibernate" ref="configHibernate"></constructor-arg>
+	</bean>
+	
+	
+	<bean id="usuarioNegocio" class="negocio.UsuarioNegocio" scope="singleton">
+		<property name="usuarioDao" ref="usuarioDao"></property>
 	</bean>
 
 	

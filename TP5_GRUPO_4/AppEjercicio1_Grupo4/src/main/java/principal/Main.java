@@ -9,18 +9,19 @@ import negocio.UsuarioNegocio;
 
 public class Main {
 
+	static ApplicationContext appContext;
 	public static void main(String[] args) {
-		ApplicationContext appContext = new ClassPathXmlApplicationContext("resources/Beans.xml");
+		appContext = new ClassPathXmlApplicationContext("resources/Beans.xml");
 		
 		Usuario usuario = (Usuario)appContext.getBean("usuarioPepe");
 
 	    System.out.println(usuario);
-	    /*UsuarioNegocio usuarioNegocio = new UsuarioNegocio();
+	    UsuarioNegocio usuarioNegocio = (UsuarioNegocio)appContext.getBean("usuarioNegocio");
 	    boolean estado= usuarioNegocio.agregarUsuario(usuario);
 	    if(estado)
 	    	System.out.println("Se agrego correctamente");
 	    else
-	    	System.out.println("No se pudo agregar, el usuario ya existe en la BD");*/
+	    	System.out.println("No se pudo agregar, el usuario ya existe en la BD");
 	    
 	    
 	    ((ConfigurableApplicationContext)(appContext)).close();

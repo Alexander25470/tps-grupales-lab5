@@ -8,9 +8,13 @@ public class UsuarioDao {
 
 	private ConfigHibernate config;
 	
+	
+	public UsuarioDao(ConfigHibernate config) {
+		this.config = config;
+	}
+
 	public void Add(Usuario user)
 	{
-		config = new ConfigHibernate();
 		Session session= config.abrirConexion();
 		
 	        
@@ -23,7 +27,6 @@ public class UsuarioDao {
 	
 	public Usuario ReadOne(String nombreUsuario)
 	{
-		config = new ConfigHibernate();
 		Session session= config.abrirConexion();
 		
 		session.beginTransaction();
@@ -36,7 +39,6 @@ public class UsuarioDao {
 
 	public boolean Exist(String nombreUsuario)
 	{
-		config = new ConfigHibernate();
 		Session session= config.abrirConexion();
 		
 		session.beginTransaction();
@@ -52,7 +54,6 @@ public class UsuarioDao {
 	
 	public void Update(Usuario usuario)
 	{
-		ConfigHibernate config = new ConfigHibernate();
 		Session session= config.abrirConexion();
 		
         session.beginTransaction();

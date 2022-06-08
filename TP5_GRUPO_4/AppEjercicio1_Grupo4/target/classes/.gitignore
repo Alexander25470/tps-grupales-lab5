@@ -1,3 +1,4 @@
-/resources/
-/entidad/
 /principal/
+/resources/
+/negocio/
+/dao/
