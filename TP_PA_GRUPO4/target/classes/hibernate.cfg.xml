@@ -10,11 +10,15 @@
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         <property name="hbm2ddl.auto">update</property>
-        <property name="show_sql">false</property>
+        <property name="show_sql">true</property>
         
         <mapping class="ejercicio1.entidad.Persona"/>
         <mapping class="ejercicio1.entidad.TarjetaSube"/>
         <mapping class="ejercicio2.entidad.Cliente"/>
         <mapping class="ejercicio2.entidad.Compra"/>
+        <mapping class="ejercicio3.entidad.Artista"/>
+        <mapping class="ejercicio3.entidad.Evento"/>
+        <mapping class="ejercicio4.entidad.Mercado"/>
+        <mapping class="ejercicio4.entidad.Producto"/>
     </session-factory>
 </hibernate-configuration>
