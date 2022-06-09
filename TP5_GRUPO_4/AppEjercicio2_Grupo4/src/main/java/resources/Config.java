@@ -19,7 +19,7 @@ public class Config {
 		Usuario pepe = new Usuario();
 		
 		pepe.setUsuario("Pepe");
-		pepe.setUsuario("123");
+		pepe.setContrasenia("123");
 		
 		return pepe;
 	}
@@ -28,18 +28,18 @@ public class Config {
 	@Scope(value = ConfigurableBeanFactory.SCOPE_SINGLETON)
 	public ConfigHibernate configHibernate()
 	{
-		ConfigHibernate configHibernate = new ConfigHibernate();
+		ConfigHibernate cHibernate = new ConfigHibernate();
 		
-		return configHibernate;
+		return cHibernate;
 	}
 	
 	@Bean
 	@Scope(value = ConfigurableBeanFactory.SCOPE_SINGLETON)
 	public UsuarioDao usuarioDao()
 	{
-		ConfigHibernate configHibernate = configHibernate();
+		ConfigHibernate cHibernate = configHibernate();
 		
-		UsuarioDao usuarioDao = new UsuarioDao(configHibernate);
+		UsuarioDao usuarioDao = new UsuarioDao(cHibernate);
 		
 		return usuarioDao;
 	}
@@ -48,10 +48,10 @@ public class Config {
 	@Scope(value = ConfigurableBeanFactory.SCOPE_SINGLETON)
 	public UsuarioNegocio usuarioNegocio()
 	{
-		UsuarioDao usuarioDao = usuarioDao();
+		UsuarioDao uDao = usuarioDao();
 		
 		UsuarioNegocio usuarioNegocio = new UsuarioNegocio();
-		usuarioNegocio.setUsuarioDao(usuarioDao);
+		usuarioNegocio.setUsuarioDao(uDao);
 		
 		return usuarioNegocio;
 	}

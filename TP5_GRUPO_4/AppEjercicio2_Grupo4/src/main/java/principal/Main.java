@@ -15,7 +15,8 @@ public class Main {
 		appContext = new AnnotationConfigApplicationContext(Config.class); 
 		
 		Usuario usuario = (Usuario)appContext.getBean("usuarioPepe");
-	    
+
+		
 	    UsuarioNegocio usuarioNegocio = (UsuarioNegocio)appContext.getBean("usuarioNegocio");
 	    boolean estado= usuarioNegocio.agregarUsuario(usuario);
 	    if(estado)
