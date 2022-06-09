@@ -45,9 +45,12 @@ public class Usuario implements Serializable{
 		this.usuario = usuario;
 	}
 
+
 	@Override
 	public String toString() {
-		return "usuario=" + usuario + ", contrasenia=" + contrasenia + "]";
+		return "Usuario [usuario=" + usuario + ", contrasenia=" + contrasenia + "]";
 	}
 
+	
 }
+
