@@ -1,0 +1,28 @@
+package negocioImp;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import dao.IdaoPersona;
+import entidad.Persona;
+import negocio.InegPersona;
+
+@Service("servicioPersona")
+public class NegPersona implements InegPersona {
+
+	@Autowired
+	private IdaoPersona daoPersona;
+	
+	@Override
+	public List<Persona> listarPersonas() {
+		return daoPersona.listarPersonas();
+	}
+
+	@Override
+	public boolean agregarPersona(Persona p) {
+		return daoPersona.agregarPersona(p);
+	}
+
+}
