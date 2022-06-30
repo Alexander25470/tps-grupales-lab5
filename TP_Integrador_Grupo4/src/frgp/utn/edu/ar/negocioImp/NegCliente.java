@@ -5,24 +5,24 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import frgp.utn.edu.ar.dao.IdaoPersona;
-import frgp.utn.edu.ar.entidad.Persona;
-import frgp.utn.edu.ar.negocio.InegPersona;
+import frgp.utn.edu.ar.dao.IdaoCliente;
+import frgp.utn.edu.ar.entidad.Cliente;
+import frgp.utn.edu.ar.negocio.InegCliente;
 
-@Service("servicioPersona")
-public class NegPersona implements InegPersona {
+@Service("servicioCliente")
+public class NegCliente implements InegCliente {
 
 	@Autowired
-	private IdaoPersona daoPersona;
+	private IdaoCliente daoCliente;
 	
 	@Override
-	public List<Persona> listarPersonas() {
-		return daoPersona.listarPersonas();
+	public List<Cliente> listarClientes() {
+		return daoCliente.listarClientes();
 	}
 
 	@Override
-	public boolean agregarPersona(Persona p) {
-		return daoPersona.agregarPersona(p);
+	public boolean agregarCliente(Cliente c) {
+		return daoCliente.agregarCliente(c);
 	}
 
 }

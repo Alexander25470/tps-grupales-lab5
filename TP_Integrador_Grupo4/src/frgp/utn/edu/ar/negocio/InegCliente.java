@@ -2,10 +2,10 @@ package frgp.utn.edu.ar.negocio;
 
 import java.util.List;
 
-import frgp.utn.edu.ar.entidad.Persona;
+import frgp.utn.edu.ar.entidad.Cliente;
 
-public interface InegPersona {
+public interface InegCliente {
 
-	public List<Persona> listarPersonas();
-	public boolean agregarPersona(Persona p);
+	public List<Cliente> listarClientes();
+	public boolean agregarCliente(Cliente c);
 }

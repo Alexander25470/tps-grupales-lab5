@@ -6,17 +6,17 @@ import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import frgp.utn.edu.ar.dao.IdaoPersona;
-import frgp.utn.edu.ar.entidad.Persona;
+import frgp.utn.edu.ar.dao.IdaoCliente;
+import frgp.utn.edu.ar.entidad.Cliente;
 
-@Repository("daoPersona")
-public class DaoPersona implements IdaoPersona {
+@Repository("daoCliente")
+public class DaoCliente implements IdaoCliente {
 	
 	@Autowired
 	private Conexion conexion;
 	
 	@Override
-	public List<Persona> listarPersonas() {
+	public List<Cliente> listarClientes() {
 		Session session = conexion.abrirConexion();
 		
 		session.close();
@@ -24,13 +24,13 @@ public class DaoPersona implements IdaoPersona {
 	}
 
 	@Override
-	public boolean agregarPersona(Persona p) {
+	public boolean agregarCliente(Cliente c) {
 		Session session = conexion.abrirConexion();
 		Transaction tx= session.beginTransaction();
 		boolean aux = true;
 		try
 		{
-			session.save(p); 
+			session.save(c); 
 			tx = session.getTransaction();
 			tx.commit();
 		}
