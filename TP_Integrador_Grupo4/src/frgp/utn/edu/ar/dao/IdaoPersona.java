@@ -1,8 +1,8 @@
-package dao;
+package frgp.utn.edu.ar.dao;
 
 import java.util.List;
 
-import entidad.Persona;
+import frgp.utn.edu.ar.entidad.Persona;
 
 public interface IdaoPersona {
 

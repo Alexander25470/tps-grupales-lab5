@@ -1,4 +1,4 @@
-package controllers;
+package frgp.utn.edu.ar.controller;
 
 import javax.servlet.ServletConfig;
 
@@ -11,25 +11,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 import org.springframework.web.servlet.ModelAndView;
 
-import entidad.Persona;
-import negocioImp.NegPersona;
+import frgp.utn.edu.ar.entidad.Persona;
+import frgp.utn.edu.ar.negocioImp.NegPersona;
 
 @Controller
-public class LibrosController {
+public class ControladorCliente {
 
-	/*@Autowired
+	@Autowired
 	@Qualifier("servicioPersona")
 	private NegPersona negocioPersona;
 	@Autowired
-	private Persona persona;*/
+	private Persona persona;
 	
 	
-	@RequestMapping("Libros.html")
-	public ModelAndView eventoRedireccionarPag1()//Integer txtDni,String txtNombre, String txtApellido
+	@RequestMapping("agregarPersona.html")
+	public ModelAndView eventoRedireccionarPag1(Integer txtDni,String txtNombre, String txtApellido)
 	{
-		System.out.println("HOLA");
 		ModelAndView MV = new ModelAndView();
-		/*persona.setApellido(txtApellido);
+		persona.setApellido(txtApellido);
 		persona.setDni(txtDni);
 		persona.setNombre(txtNombre);
 		
@@ -39,8 +38,8 @@ public class LibrosController {
 		{
 			cartel="La persona ha sido agregada exitosamente";
 		}
-		MV.addObject("estadoAgregarPersona",cartel);*/
-		MV.setViewName("Libros");
+		MV.addObject("estadoAgregarPersona",cartel);
+		MV.setViewName("Inicio");
 		return MV;
 	}
 }

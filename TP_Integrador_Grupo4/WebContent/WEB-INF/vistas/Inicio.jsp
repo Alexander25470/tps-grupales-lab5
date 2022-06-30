@@ -8,11 +8,16 @@
 </head>
 <body>
 
-<h3>Inicio</h3>
+<h3>Agregar persona</h3>
 
-<form action="Libros.html" method="get">
-	<input type="submit" name="btnLibros" value="Aceptar">
+<form action="agregarPersona.html" method="get">
+	Ingrese dni: <input type="text" name="txtDni">
+	Ingrese nombre: <input type="text" name="txtNombre">
+	Ingrese apellido:  <input type="text" name="txtApellido">
+	<input type="submit" name="btnAgregarPersona" value="Aceptar">
 </form>
+
+${estadoAgregarPersona}
 
 </body>
 </html>

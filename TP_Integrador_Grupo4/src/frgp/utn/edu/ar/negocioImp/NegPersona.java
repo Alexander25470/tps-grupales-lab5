@@ -1,13 +1,13 @@
-package negocioImp;
+package frgp.utn.edu.ar.negocioImp;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import dao.IdaoPersona;
-import entidad.Persona;
-import negocio.InegPersona;
+import frgp.utn.edu.ar.dao.IdaoPersona;
+import frgp.utn.edu.ar.entidad.Persona;
+import frgp.utn.edu.ar.negocio.InegPersona;
 
 @Service("servicioPersona")
 public class NegPersona implements InegPersona {

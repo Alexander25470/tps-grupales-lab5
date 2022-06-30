@@ -1,8 +1,8 @@
-package negocio;
+package frgp.utn.edu.ar.negocio;
 
 import java.util.List;
 
-import entidad.Persona;
+import frgp.utn.edu.ar.entidad.Persona;
 
 public interface InegPersona {
 

@@ -1,4 +1,4 @@
-package entidad;
+package frgp.utn.edu.ar.entidad;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

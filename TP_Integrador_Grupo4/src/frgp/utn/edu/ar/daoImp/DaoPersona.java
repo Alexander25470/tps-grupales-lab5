@@ -1,4 +1,4 @@
-package daoImp;
+package frgp.utn.edu.ar.daoImp;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -6,8 +6,8 @@ import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import dao.IdaoPersona;
-import entidad.Persona;
+import frgp.utn.edu.ar.dao.IdaoPersona;
+import frgp.utn.edu.ar.entidad.Persona;
 
 @Repository("daoPersona")
 public class DaoPersona implements IdaoPersona {
