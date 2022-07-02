@@ -12,9 +12,9 @@
 </head>
 <body>
 	<h1>Clientes</h1>
-	<form action="altaCliente.html" method="get">
+	<a href="altaCliente.html">
 		<button type="submit" value="Aceptar">Alta cliente</button>
-	</form>
+	</a>
 	<table>
 		<thead>
 			<tr>
@@ -43,7 +43,12 @@
 				<td>Localidad</td>
 				<td>Teléfono</td>
 				<td>Fecha Nacimiento</td>
-				<td><button>Eliminar</button> <button>Editar</button></td>
+				<td>
+					<button>Eliminar</button>
+					<a href="modificarCliente.html?idCliente=1">
+						<button>Editar</button>
+					</a>
+				</td>
 			</tr>
 			<tr>
 				<td>ID</td>
@@ -56,7 +61,12 @@
 				<td>Localidad</td>
 				<td>Teléfono</td>
 				<td>Fecha Nacimiento</td>
-				<td><button>Eliminar</button> <button>Editar</button></td>
+				<td>
+					<button>Eliminar</button>
+					<a href="modificarCliente.html?idCliente=1">
+						<button>Editar</button>
+					</a>
+				</td>
 			</tr>
 			<tr>
 				<td>ID</td>
@@ -69,7 +79,12 @@
 				<td>Localidad</td>
 				<td>Teléfono</td>
 				<td>Fecha Nacimiento</td>
-				<td><button>Eliminar</button> <button>Editar</button></td>
+				<td>
+					<button>Eliminar</button>
+					<a href="modificarCliente.html?idCliente=1">
+						<button>Editar</button>
+					</a>
+				</td>
 			</tr>
 			<tr>
 				<td>ID</td>
@@ -82,9 +97,15 @@
 				<td>Localidad</td>
 				<td>Teléfono</td>
 				<td>Fecha Nacimiento</td>
-				<td><button>Eliminar</button> <button>Editar</button></td>
+				<td>
+					<button>Eliminar</button>
+					<a href="modificarCliente.html?idCliente=1">
+						<button>Editar</button>
+					</a>
+				</td>
 			</tr>
 		</tbody>
 	</table>
+	
 </body>
 </html>

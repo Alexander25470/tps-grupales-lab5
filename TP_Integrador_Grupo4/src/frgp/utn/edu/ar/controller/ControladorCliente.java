@@ -60,4 +60,13 @@ public class ControladorCliente {
 		MV.setViewName("AltaCliente");
 		return MV;
 	}
+	
+	@RequestMapping(value= "/modificarCliente.html", method=RequestMethod.GET)
+	public ModelAndView ModificarBiblioteca(int idCliente)
+	{
+		ModelAndView MV = new ModelAndView();
+
+		MV.setViewName("ModificarCliente");
+		return MV;
+	}
 }

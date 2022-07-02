@@ -28,7 +28,7 @@
 	<form action="clientes.html" method="get">
 		<button type="submit" value="Aceptar">ABML clientes</button>
 	</form>
-	<form action="clientes.html" method="get">
+	<form action="bibliotecas.html" method="get">
 		<button type="submit" value="Aceptar">ABML biblioteca</button>
 	</form>
 	<form action="prestamos.html" method="get">
