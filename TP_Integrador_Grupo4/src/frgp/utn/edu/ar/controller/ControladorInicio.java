@@ -15,4 +15,13 @@ public class ControladorInicio {
 		MV.setViewName("Inicio");
 		return MV;
 	}
+	
+	@RequestMapping("iniciarSesion.html")
+	public ModelAndView iniciarSesion(String user, String password)
+	{
+		ModelAndView MV = new ModelAndView();
+		MV.addObject("usuario", user);
+		MV.setViewName("Inicio");
+		return MV;
+	}
 }

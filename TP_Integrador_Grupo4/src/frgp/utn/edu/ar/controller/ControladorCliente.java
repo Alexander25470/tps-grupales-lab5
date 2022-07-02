@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -23,9 +24,26 @@ public class ControladorCliente {
 	@Autowired
 	private Cliente cliente;
 	
+	@RequestMapping(value= "/clientes.html", method=RequestMethod.GET)
+	public ModelAndView Clientes()
+	{
+		ModelAndView MV = new ModelAndView();
+
+		MV.setViewName("Clientes");
+		return MV;
+	}
 	
-	@RequestMapping("agregarPersona.html")
-	public ModelAndView eventoRedireccionarPag1(Integer txtDni,String txtNombre, String txtApellido)
+	@RequestMapping(value= "/altaCliente.html", method=RequestMethod.GET)
+	public ModelAndView altaCliente()
+	{
+		ModelAndView MV = new ModelAndView();
+
+		MV.setViewName("AltaCliente");
+		return MV;
+	}
+	
+	@RequestMapping(value= "/altaCliente.html", method=RequestMethod.POST)
+	public ModelAndView altaClientePost(Integer txtDni,String txtNombre, String txtApellido)
 	{
 		ModelAndView MV = new ModelAndView();
 		cliente.setApellido(txtApellido);
@@ -39,7 +57,7 @@ public class ControladorCliente {
 			cartel="La persona ha sido agregada exitosamente";
 		}
 		MV.addObject("estadoAgregarPersona",cartel);
-		MV.setViewName("Inicio");
+		MV.setViewName("AltaCliente");
 		return MV;
 	}
 }
