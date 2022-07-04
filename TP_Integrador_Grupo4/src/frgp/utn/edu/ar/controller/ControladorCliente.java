@@ -1,5 +1,8 @@
 package frgp.utn.edu.ar.controller;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.servlet.ServletConfig;
 
 import org.hibernate.service.config.spi.ConfigurationService.Converter;
@@ -13,6 +16,7 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
 import org.springframework.web.servlet.ModelAndView;
 
 import frgp.utn.edu.ar.entidad.Cliente;
+import frgp.utn.edu.ar.entidad.Nacionalidad;
 import frgp.utn.edu.ar.negocioImp.NegCliente;
 
 @Controller
@@ -42,13 +46,26 @@ public class ControladorCliente {
 		return MV;
 	}
 	
-	@RequestMapping(value= "/altaCliente.html", method=RequestMethod.POST)
-	public ModelAndView altaClientePost(Integer txtDni,String txtNombre, String txtApellido)
+	@RequestMapping(value= "/altaClientePost.html", method=RequestMethod.GET)
+	public ModelAndView altaClientePost(Integer dni,String nombre, String apellido, Integer idNacionalidad, String email, String localidad, String fechaNacimiento)
 	{
 		ModelAndView MV = new ModelAndView();
-		cliente.setApellido(txtApellido);
-		cliente.setDni(txtDni.toString());
-		cliente.setNombre(txtNombre);
+		cliente.setDni(dni.toString());
+		cliente.setNombre(nombre);
+		cliente.setApellido(apellido);
+		//Nacionalidad nac = new Nacionalidad();
+		//nac.setId(idNacionalidad);
+		//cliente.setNacionalidad(nac);
+		cliente.setEmail(email);
+		cliente.setLocalidad(localidad);
+		/*Date fechaNac= new Date();
+		try {
+			fechaNac = new SimpleDateFormat("yyyy-MM-dd").parse(fechaNacimiento);
+			System.out.println(fechaNac);
+		} catch (Exception e){
+			System.out.println(fechaNacimiento);
+		}
+		cliente.setFechaNacimiento(fechaNac);*/
 		
 		boolean estado= servicioCliente.agregarCliente(cliente);
 		String cartel="No se pudo agregar la persona";

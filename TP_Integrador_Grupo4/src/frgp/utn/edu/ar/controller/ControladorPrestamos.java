@@ -17,4 +17,13 @@ public class ControladorPrestamos {
 		MV.setViewName("Prestamos");
 		return MV;
 	}
+	
+	@RequestMapping(value= "/altaPrestamo.html", method=RequestMethod.GET)
+	public ModelAndView altaCliente()
+	{
+		ModelAndView MV = new ModelAndView();
+
+		MV.setViewName("AltaPrestamo");
+		return MV;
+	}
 }

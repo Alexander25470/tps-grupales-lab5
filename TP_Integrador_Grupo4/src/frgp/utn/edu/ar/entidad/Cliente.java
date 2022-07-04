@@ -22,6 +22,8 @@ public class Cliente {
 	@Column
 	private Nacionalidad nacionalidad;
 	@Column
+	private String email;
+	@Column
 	private String localidad;
 	@Column
 	private String telefono;
@@ -74,6 +76,12 @@ public class Cliente {
 	}
 	public void setFechaNacimiento(Date fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	
 	

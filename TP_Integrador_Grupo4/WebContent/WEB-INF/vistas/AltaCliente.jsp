@@ -12,16 +12,29 @@
 </head>
 <body>
 
-<h3>Agregar persona</h3>
+<h3>Alta cliente</h3>
 <form action="clientes.html" method="get">
 	<button type="submit" value="Aceptar">Volver</button>
 </form>
 
-<form action="agregarPersona.html" method="get">
-	Ingrese dni: <input type="text" name="txtDni">
-	Ingrese nombre: <input type="text" name="txtNombre">
-	Ingrese apellido:  <input type="text" name="txtApellido">
-	<input type="submit" name="btnAgregarPersona" value="Aceptar">
+<form action="altaClientePost.html" method="get">
+	Ingrese dni: <br/>
+	<input type="text" name="dni"> <br/>
+	Ingrese nombre:<br/>
+	<input type="text" name="nombre"><br/>
+	Ingrese apellido:<br/>
+	<input type="text" name="apellido"><br/>
+	Seleccione nacionalidad:<br/>
+	<select type="text" name="idNacionalidad">
+		<option value="1">Argentina</option>
+	</select><br/>
+	Ingrese Email:<br/>
+	<input type="text" name="email"><br/>
+	Ingrese localidad:<br/>
+	<input type="text" name="localidad"><br/>
+	Ingrese fecha de nacimiento:<br/>
+	<input type="date" name="fechaNacimiento"><br/><br/>
+	<button type="submit">Aceptar</button>
 </form>
 
 ${estadoAgregarPersona}

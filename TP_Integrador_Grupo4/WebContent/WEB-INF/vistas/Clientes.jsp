@@ -12,9 +12,20 @@
 </head>
 <body>
 	<h1>Clientes</h1>
+	<a href="inicio.html">
+		<button>Inicio</button>
+	</a>
 	<a href="altaCliente.html">
 		<button type="submit" value="Aceptar">Alta cliente</button>
 	</a>
+	
+	<br/>
+	<br/>
+	<form target="clientes.html">
+		Ingrese nombre de cliente
+		<input name="nombreCliente"/>
+		<button type="submit">Buscar</button>
+	</form>
 	<table>
 		<thead>
 			<tr>

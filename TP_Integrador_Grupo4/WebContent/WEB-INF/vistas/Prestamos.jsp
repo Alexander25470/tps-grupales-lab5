@@ -12,9 +12,12 @@
 </head>
 <body>
 	<h1>Prestamos</h1>
-	<form action="altaCliente.html" method="get">
+	<a href="inicio.html">
+		<button>Inicio</button>
+	</a>
+	<a href="altaPrestamo.html">
 		<button type="submit" value="Aceptar">Nuevo prestamo</button>
-	</form>
+	</a>
 	<table>
 		<thead>
 			<tr>

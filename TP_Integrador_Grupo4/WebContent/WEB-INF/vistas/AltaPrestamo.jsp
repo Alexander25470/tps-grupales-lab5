@@ -12,19 +12,24 @@
 </head>
 <body>
 
-<h1>Modificar biblioteca</h1>
-<form action="clientes.html" method="get">
+<h1>Alta prestamo</h1>
+<form action="prestamos.html" method="get">
 	<button type="submit" value="Aceptar">Volver</button>
 </form>
 
-<form action="agregarBiblioteca.html" method="get">
-	ID Biblioteca 23<br/>
-	Seleccione libro:<br/>
+<form action="agregarPestamo.html" method="get">
+	Seleccione biblioteca:<br/>
 	<select type="text" name="txtLibro">
-		<option id="1">23434 - libro 1</option>
+		<option id="1">libro 1</option>
 	</select><br/>
-	Ingrese fecha de alta:<br/>
-	<input type="date" name="txtfechaAlta"><br/><br/>
+	Ingrese fecha de prestamo:<br/>
+	<input type="date" name="txtfechaPrestamo"><br/>
+	Ingrese cantidad de dias:<br/>
+	<input type="number" name="txtfechaPrestamo"><br/>
+	Seleccione cliente:<br/>
+	<select type="text" name="txtCliente">
+		<option id="1">cliente 1</option>
+	</select><br/><br/>
 	<input type="submit" name="btnAgregarPersona" value="Aceptar">
 </form>
 

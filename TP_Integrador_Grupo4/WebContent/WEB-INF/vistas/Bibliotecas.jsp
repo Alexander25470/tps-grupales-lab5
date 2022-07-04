@@ -12,8 +12,22 @@
 </head>
 <body>
 	<h1>Bibliotecas</h1>
-	<form action="altaCliente.html" method="get">
+	<a href="inicio.html">
+		<button>Inicio</button>
+	</a>
+	<a href="altaBiblioteca.html">
 		<button type="submit" value="Aceptar">Alta biblioteca</button>
+	</a>
+	<br/>
+	<br/>
+	<form target="bibliotecas.html">
+		Seleccione estado de biblioteca
+		<select name="estadoBiblioteca">
+			<option value="0">Todos</option>
+			<option value="1">En biblioteca</option>
+			<option value="2">Prestado</option>
+		</select>
+		<button type="submit">Buscar</button>
 	</form>
 	<table>
 		<thead>
@@ -35,7 +49,7 @@
 				<td>Estado</td>
 				<td>
 					<button>Eliminar</button>
-					<a href="modificarBiblioteca.html?idBibliotecae=1">
+					<a href="modificarBiblioteca.html?idBiblioteca=1">
 						<button>Editar</button>
 					</a>
 				</td>
@@ -48,7 +62,7 @@
 				<td>Estado</td>
 				<td>
 					<button>Eliminar</button>
-					<a href="modificarBiblioteca.html?idBibliotecae=1">
+					<a href="modificarBiblioteca.html?idBiblioteca=1">
 						<button>Editar</button>
 					</a>
 				</td>
@@ -61,7 +75,7 @@
 				<td>Estado</td>
 				<td>
 					<button>Eliminar</button>
-					<a href="modificarBiblioteca.html?idBibliotecae=1">
+					<a href="modificarBiblioteca.html?idBiblioteca=1">
 						<button>Editar</button>
 					</a>
 				</td>
@@ -74,7 +88,7 @@
 				<td>Estado</td>
 				<td>
 					<button>Eliminar</button>
-					<a href="modificarBiblioteca.html?idBibliotecae=1">
+					<a href="modificarBiblioteca.html?idBiblioteca=1">
 						<button>Editar</button>
 					</a>
 				</td>
