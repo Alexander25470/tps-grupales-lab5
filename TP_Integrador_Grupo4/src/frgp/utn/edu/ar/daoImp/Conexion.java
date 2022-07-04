@@ -25,14 +25,18 @@ public class Conexion {
 	
 	public Session abrirConexion()
 	{
-		session=sessionFactory.openSession();
+		try {			
+			session=sessionFactory.openSession();
+		} catch(Exception e){	
+			System.out.println(e.toString());
+		}
 		return session;
 	}
 	
 	public void cerrarSession()
 	{
 		session.close();
-		cerrarSessionFactory();
+		// cerrarSessionFactory();
 	}
 	
 	
