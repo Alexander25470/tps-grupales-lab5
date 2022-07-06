@@ -19,7 +19,7 @@
 
 <form action="altaClientePost.html" method="get">
 	Ingrese dni: <br/>
-	<input type="text" name="dni"> <br/>
+	<input type="number" name="dni"> <br/>
 	Ingrese nombre:<br/>
 	<input type="text" name="nombre"><br/>
 	Ingrese apellido:<br/>

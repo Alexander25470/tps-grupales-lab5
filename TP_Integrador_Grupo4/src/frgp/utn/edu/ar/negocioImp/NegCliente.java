@@ -17,12 +17,12 @@ public class NegCliente implements InegCliente {
 	
 	@Override
 	public List<Cliente> listarClientes() {
-		return daoCliente.listarClientes();
+		return daoCliente.getAll();
 	}
 
 	@Override
 	public boolean agregarCliente(Cliente c) {
-		return daoCliente.agregarCliente(c);
+		return daoCliente.create(c);
 	}
 
 }
