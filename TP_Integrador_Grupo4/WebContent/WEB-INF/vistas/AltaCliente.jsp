@@ -33,6 +33,10 @@
 	Ingrese localidad:<br/>
 	<input type="text" name="localidad"><br/>
 	Ingrese fecha de nacimiento:<br/>
+	<input type="text" name="direccion"><br/>
+	Ingrese direccion:<br/>
+	<input type="text" name="telefono"><br/>
+	Ingrese telefono:<br/>
 	<input type="date" name="fechaNacimiento"><br/><br/>
 	<button type="submit">Aceptar</button>
 </form>

@@ -4,6 +4,7 @@
     prefix="c"
     uri="http://java.sun.com/jsp/jstl/core" 
 %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -97,7 +98,7 @@ body {
 		</div>
 		<div class="row d-flex justify-content-center p-4">
 			<div class="col-12 d-flex justify-content-end pb-2">
-				<form class="d-flex flex-row" target="clientes.html">
+				<form class="d-flex flex-row" action="clientes.html" name="get">
 					<input class="form-control" placeholder="Ingrese nombre del cliente..." name="nombreCliente"/>
 					<button class="p-2 input-group-text" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
 				</form>
@@ -120,78 +121,28 @@ body {
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>ID</td>
-							<td>DNI</td>
-							<td>Nombre</td>
-							<td>Apellido</td>
-							<td>Nacionalidad</td>
-							<td>Email</td>
-							<td>Dirección</td>
-							<td>Localidad</td>
-							<td>Teléfono</td>
-							<td>Fecha Nacimiento</td>
-							<td>
-								<button class="buttonDelete" >Eliminar</button>
-								<a href="modificarCliente.html?idCliente=1">
-									<button class="buttonEdit" >Editar</button>
-								</a>
-							</td>
-						</tr>
-						<tr>
-							<td>ID</td>
-							<td>DNI</td>
-							<td>Nombre</td>
-							<td>Apellido</td>
-							<td>Nacionalidad</td>
-							<td>Email</td>
-							<td>Dirección</td>
-							<td>Localidad</td>
-							<td>Teléfono</td>
-							<td>Fecha Nacimiento</td>
-							<td>
-								<button class="buttonDelete" >Eliminar</button>
-								<a href="modificarCliente.html?idCliente=1">
-									<button class="buttonEdit"  >Editar</button>
-								</a>
-							</td>
-						</tr>
-						<tr>
-							<td>ID</td>
-							<td>DNI</td>
-							<td>Nombre</td>
-							<td>Apellido</td>
-							<td>Nacionalidad</td>
-							<td>Email</td>
-							<td>Dirección</td>
-							<td>Localidad</td>
-							<td>Teléfono</td>
-							<td>Fecha Nacimiento</td>
-							<td>
-								<button class="buttonDelete" >Eliminar</button>
-								<a href="modificarCliente.html?idCliente=1">
-									<button class="buttonEdit"  >Editar</button>
-								</a>
-							</td>
-						</tr>
-						<tr>
-							<td>ID</td>
-							<td>DNI</td>
-							<td>Nombre</td>
-							<td>Apellido</td>
-							<td>Nacionalidad</td>
-							<td>Email</td>
-							<td>Dirección</td>
-							<td>Localidad</td>
-							<td>Teléfono</td>
-							<td>Fecha Nacimiento</td>
-							<td>
-								<button class="buttonDelete" >Eliminar</button>
-								<a href="modificarCliente.html?idCliente=1">
-									<button class="buttonEdit"  >Editar</button>
-								</a>
-							</td>
-						</tr>
+						<c:forEach var="cliente" items="${clientes}">
+							<tr>
+								<td>${cliente.id}</td>
+								<td>${cliente.dni}</td>
+								<td>${cliente.nombre}</td>
+								<td>${cliente.apellido}</td>
+								<td>${cliente.nacionalidad.descripcion}</td>
+								<td>${cliente.email}</td>
+								<td>${cliente.direccion}</td>
+								<td>${cliente.localidad}</td>
+								<td>${cliente.telefono}</td>
+								<td>
+								<fmt:formatDate value="${cliente.fechaNacimiento}" pattern="yyyy-MM-dd" />
+								</td>
+								<td>
+									<button class="buttonDelete" >Eliminar</button>
+									<a href="modificarCliente.html?idCliente=${cliente.id}">
+										<button class="buttonEdit"  >Editar</button>
+									</a>
+								</td>
+							</tr>
+						</c:forEach>
 					</tbody>
 				</table>
 			</div>

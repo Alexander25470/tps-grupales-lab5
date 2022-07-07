@@ -28,6 +28,8 @@ public class Cliente {
 	@Column
 	private String localidad;
 	@Column
+	private String direccion;
+	@Column
 	private String telefono;
 	@Column
 	private Date fechaNacimiento;
@@ -85,11 +87,18 @@ public class Cliente {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
+	public String getDireccion() {
+		return direccion;
+	}
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
 	@Override
 	public String toString() {
 		return "Cliente [id=" + id + ", dni=" + dni + ", nombre=" + nombre + ", apellido=" + apellido
-				+ ", nacionalidad=" + nacionalidad + ", email=" + email + ", localidad=" + localidad + ", telefono="
-				+ telefono + ", fechaNacimiento=" + fechaNacimiento + "]";
-	}	
+				+ ", nacionalidad=" + nacionalidad + ", email=" + email + ", localidad=" + localidad + ", direccion="
+				+ direccion + ", telefono=" + telefono + ", fechaNacimiento=" + fechaNacimiento + "]";
+	}
+	
+
 }

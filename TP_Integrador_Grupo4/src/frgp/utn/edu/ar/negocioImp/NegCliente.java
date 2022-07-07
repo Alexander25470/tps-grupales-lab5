@@ -16,13 +16,24 @@ public class NegCliente implements InegCliente {
 	private IdaoCliente daoCliente;
 	
 	@Override
-	public List<Cliente> listarClientes() {
-		return daoCliente.getAll();
+	public List<Cliente> listarClientes(String nombreODni) {
+		if(nombreODni == null || nombreODni ==  "")
+		{			
+			return daoCliente.getAll();
+		} else {
+			String where = "where DNI like '%"+nombreODni+"%' or nombre like '%"+nombreODni+"%'";
+			return daoCliente.getAll(where);
+		}
 	}
 
 	@Override
 	public boolean agregarCliente(Cliente c) {
 		return daoCliente.create(c);
+	}
+
+	@Override
+	public Cliente obtenerUno(int id) {
+		return daoCliente.getOne(id);
 	}
 
 }

@@ -30,6 +30,14 @@ public class DaoGenerico<T> implements IdaoGenerico<T>{
 		session.close();
 		return listT;
 	}
+	
+	@Override
+	public List<T> getAll(String consultaAdicional) {
+		Session session = conexion.abrirConexion();
+		List<T> listT = (List<T>)session.createQuery("from " + type.getName() + " " +consultaAdicional).list();
+		session.close();
+		return listT;
+	}
 
 	@Override
 	public boolean create(T t) {
@@ -49,12 +57,52 @@ public class DaoGenerico<T> implements IdaoGenerico<T>{
 		}
 		conexion.cerrarSession();
 		
-		List<T> test = getAll();
-		for (T te : test) {
-      	  System.out.println(te.toString()+" ");	
-		}
-		
 		return aux;
+	}
+	@Override
+	public boolean delete(T t) {
+		Session session = conexion.abrirConexion();
+		Transaction tx= session.beginTransaction();
+		boolean aux = true;
+		try
+		{
+			session.save(t); 
+			tx = session.getTransaction();
+			tx.commit();
+		}
+		catch (Exception e) {
+			System.out.println(e);
+			aux=false;
+			tx.rollback();
+		}
+		conexion.cerrarSession();
+		return aux;
+	}
+	@Override
+	public boolean update(T t) {
+		Session session = conexion.abrirConexion();
+		Transaction tx= session.beginTransaction();
+		boolean aux = true;
+		try
+		{
+			session.delete(t); 
+			tx = session.getTransaction();
+			tx.commit();
+		}
+		catch (Exception e) {
+			System.out.println(e);
+			aux=false;
+			tx.rollback();
+		}
+		conexion.cerrarSession();
+		return aux;
+	}
+	@Override
+	public T getOne(int id) {
+		Session session = conexion.abrirConexion();
+		T entidad = (T)session.get(type.getName(), id);
+		session.close();
+		return entidad;
 	}
 
 }

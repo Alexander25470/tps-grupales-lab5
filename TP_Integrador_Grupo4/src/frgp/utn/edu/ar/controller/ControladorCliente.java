@@ -1,7 +1,9 @@
 package frgp.utn.edu.ar.controller;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.ServletConfig;
 
@@ -29,11 +31,12 @@ public class ControladorCliente {
 	private Cliente cliente;
 	
 	@RequestMapping(value= "/clientes.html", method=RequestMethod.GET)
-	public ModelAndView Clientes()
+	public ModelAndView Clientes(String nombreCliente)
 	{
 		ModelAndView MV = new ModelAndView();
-
+		List<Cliente> clientes = servicioCliente.listarClientes(nombreCliente);
 		MV.setViewName("Clientes");
+		MV.addObject("clientes",clientes);
 		return MV;
 	}
 	
@@ -47,7 +50,10 @@ public class ControladorCliente {
 	}
 	
 	@RequestMapping(value= "/altaClientePost.html", method=RequestMethod.GET)
-	public ModelAndView altaClientePost(Integer dni,String nombre, String apellido, Integer idNacionalidad, String email, String localidad, String fechaNacimiento)
+	public ModelAndView altaClientePost(Integer dni,String nombre, String apellido, Integer idNacionalidad,
+	String email, String localidad, String fechaNacimiento,
+	String direccion, String telefono
+	)
 	{
 		ModelAndView MV = new ModelAndView();
 		cliente.setDni(dni.toString());
@@ -56,16 +62,18 @@ public class ControladorCliente {
 		//Nacionalidad nac = new Nacionalidad();
 		//nac.setId(idNacionalidad);
 		//cliente.setNacionalidad(nac);
+		cliente.setTelefono(telefono);
+		cliente.setDireccion(direccion);
 		cliente.setEmail(email);
 		cliente.setLocalidad(localidad);
-		/*Date fechaNac= new Date();
+		Date fechaNac= new Date();
 		try {
 			fechaNac = new SimpleDateFormat("yyyy-MM-dd").parse(fechaNacimiento);
 			System.out.println(fechaNac);
 		} catch (Exception e){
 			System.out.println(fechaNacimiento);
 		}
-		cliente.setFechaNacimiento(fechaNac);*/
+		cliente.setFechaNacimiento(fechaNac);
 		
 		boolean estado= servicioCliente.agregarCliente(cliente);
 		String cartel="No se pudo agregar la persona";
@@ -82,8 +90,9 @@ public class ControladorCliente {
 	public ModelAndView ModificarBiblioteca(int idCliente)
 	{
 		ModelAndView MV = new ModelAndView();
-
+		Cliente cli = servicioCliente.obtenerUno(idCliente);
 		MV.setViewName("ModificarCliente");
+		MV.addObject("cliente",cli);
 		return MV;
 	}
 }
