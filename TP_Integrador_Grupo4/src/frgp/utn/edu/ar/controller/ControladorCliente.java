@@ -20,6 +20,7 @@ import org.springframework.web.servlet.ModelAndView;
 import frgp.utn.edu.ar.entidad.Cliente;
 import frgp.utn.edu.ar.entidad.Nacionalidad;
 import frgp.utn.edu.ar.negocioImp.NegCliente;
+import frgp.utn.edu.ar.negocioImp.NegNacionalidad;
 
 @Controller
 public class ControladorCliente {
@@ -27,6 +28,9 @@ public class ControladorCliente {
 	@Autowired
 	@Qualifier("servicioCliente")
 	private NegCliente servicioCliente;
+	@Autowired
+	@Qualifier("servicioNacionalidad")
+	private NegNacionalidad servicioNacionalidad;
 	@Autowired
 	private Cliente cliente;
 	
@@ -44,8 +48,10 @@ public class ControladorCliente {
 	public ModelAndView altaCliente()
 	{
 		ModelAndView MV = new ModelAndView();
+		List<Nacionalidad> nacionalidades = servicioNacionalidad.obtenerTodas();
 
 		MV.setViewName("AltaCliente");
+		MV.addObject("nacionalidades",nacionalidades);
 		return MV;
 	}
 	
@@ -56,12 +62,12 @@ public class ControladorCliente {
 	)
 	{
 		ModelAndView MV = new ModelAndView();
+		List<Nacionalidad> nacionalidades = servicioNacionalidad.obtenerTodas();
 		cliente.setDni(dni.toString());
 		cliente.setNombre(nombre);
 		cliente.setApellido(apellido);
-		//Nacionalidad nac = new Nacionalidad();
-		//nac.setId(idNacionalidad);
-		//cliente.setNacionalidad(nac);
+		Nacionalidad nac = servicioNacionalidad.obtenerUna(idNacionalidad);
+		cliente.setNacionalidad(nac);
 		cliente.setTelefono(telefono);
 		cliente.setDireccion(direccion);
 		cliente.setEmail(email);
@@ -82,6 +88,7 @@ public class ControladorCliente {
 			cartel="La persona ha sido agregada exitosamente";
 		}
 		MV.addObject("estadoAgregarPersona",cartel);
+		MV.addObject("nacionalidades",nacionalidades);
 		MV.setViewName("AltaCliente");
 		return MV;
 	}
@@ -90,9 +97,11 @@ public class ControladorCliente {
 	public ModelAndView ModificarBiblioteca(int idCliente)
 	{
 		ModelAndView MV = new ModelAndView();
+		List<Nacionalidad> nacionalidades = servicioNacionalidad.obtenerTodas();
 		Cliente cli = servicioCliente.obtenerUno(idCliente);
 		MV.setViewName("ModificarCliente");
 		MV.addObject("cliente",cli);
+		MV.addObject("nacionalidades",nacionalidades);
 		return MV;
 	}
 }

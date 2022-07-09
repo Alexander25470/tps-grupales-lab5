@@ -26,17 +26,19 @@
 	<input type="text" name="apellido"><br/>
 	Seleccione nacionalidad:<br/>
 	<select type="text" name="idNacionalidad">
-		<option value="1">Argentina</option>
+		<c:forEach var="nacionalidad" items="${nacionalidades}">
+			<option value="${nacionalidad.id}">${nacionalidad.descripcion}</option>
+		</c:forEach>
 	</select><br/>
 	Ingrese Email:<br/>
 	<input type="text" name="email"><br/>
 	Ingrese localidad:<br/>
 	<input type="text" name="localidad"><br/>
-	Ingrese fecha de nacimiento:<br/>
-	<input type="text" name="direccion"><br/>
 	Ingrese direccion:<br/>
-	<input type="text" name="telefono"><br/>
+	<input type="text" name="direccion"><br/>
 	Ingrese telefono:<br/>
+	<input type="text" name="telefono"><br/>
+	Ingrese fecha de nacimiento:<br/>
 	<input type="date" name="fechaNacimiento"><br/><br/>
 	<button type="submit">Aceptar</button>
 </form>
