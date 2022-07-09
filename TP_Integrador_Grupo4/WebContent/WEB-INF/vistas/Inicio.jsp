@@ -88,7 +88,7 @@ body {
 				<div class="col-6">
 					<div class="input-group mb-3">
 					  <span class="input-group-text" id="basic-addon1">Usuario</span>
-					  <input class="form-control type="text" name="user">
+					  <input class="form-control" type="text" name="user">
 					</div>
 				</div>
 			</div>
