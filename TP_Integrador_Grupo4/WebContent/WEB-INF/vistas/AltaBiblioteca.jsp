@@ -78,13 +78,15 @@ body {
 			</div>
 		</div>
 		
-		<form action="agregarBiblioteca.html" method="get">
+		<form action="altaBibliotecaPost.html" method="get">
 			<div class="row d-flex justify-content-center">
 				<div class="col-6 d-flex justify-content-center">
 					<div class="input-group mb-3">
 						<span class="input-group-text" id="basic-addon1">Libro</span>
-					  	<select class="form-select" type="text" name="txtLibro">
-							<option id="1">23434 - libro 1</option>
+					  	<select class="form-select" name="ISBN">
+						  	<c:forEach var="libro" items="${libros}">
+								<option value="${libro.ISBN}">${libro.ISBN} ${libro.titulo}</option>
+							</c:forEach>
 						</select>
 					</div>
 				</div>
@@ -94,7 +96,7 @@ body {
 				<div class="col-6 d-flex justify-content-center">
 					<div class="input-group mb-3">
 						<span class="input-group-text" id="basic-addon1">Fecha de Alta</span>
-					  	<input class="form-control" type="date" name="txtfechaAlta">
+					  	<input class="form-control" type="date" name="fechaAlta">
 					</div>
 				</div>
 			</div>
@@ -107,7 +109,7 @@ body {
 		</form>
 	</div>
 
-${estadoAgregarPersona}
+${estadoAgregar}
 
 </body>
 </html>

@@ -122,19 +122,21 @@ body {
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>ID</td>
-							<td>ISBN</td>
-							<td>Nombre libro</td>
-							<td>Fecha alta</td>
-							<td>Estado</td>
-							<td class="d-flex justify-content-center">
-								<button class="buttonDelete" >Eliminar</button>
-								<a href="modificarBiblioteca.html?idBiblioteca=1">
-									<button class="buttonEdit" >Editar</button>
-								</a>
-							</td>
-						</tr>
+						<c:forEach var="biblioteca" items="${biblioteca}">
+							<tr>
+								<td>${biblioteca.id}</td>
+								<td>${biblioteca.libro.ISBN}</td>
+								<td>${biblioteca.libro.titulo}</td>
+								<td>${biblioteca.fechaDeAlta}</td>
+								<td>${biblioteca.estado}</td>
+								<td class="d-flex justify-content-center">
+									<button class="buttonDelete" >Eliminar</button>
+									<a href="modificarBiblioteca.html?idBiblioteca=${biblioteca.id}">
+										<button class="buttonEdit" >Editar</button>
+									</a>
+								</td>
+							</tr>
+						</c:forEach>
 						<tr>
 							<td>ID</td>
 							<td>ISBN</td>

@@ -21,4 +21,12 @@ public class NegBiblioteca implements InegBiblioteca{
 		return daoBiblioteca.getAll();
 	}
 
+	@Override
+	public boolean guardar(Biblioteca biblioteca){
+		// TODO Auto-generated method stub
+		return daoBiblioteca.create(biblioteca);
+	}
+	
+	
+
 }

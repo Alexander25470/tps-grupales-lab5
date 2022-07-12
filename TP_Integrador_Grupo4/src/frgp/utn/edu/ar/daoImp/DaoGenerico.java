@@ -1,5 +1,6 @@
 package frgp.utn.edu.ar.daoImp;
 
+import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.List;
@@ -98,7 +99,7 @@ public class DaoGenerico<T> implements IdaoGenerico<T>{
 		return aux;
 	}
 	@Override
-	public T getOne(int id) {
+	public T getOne(Serializable id) {
 		Session session = conexion.abrirConexion();
 		T entidad = (T)session.get(type.getName(), id);
 		session.close();

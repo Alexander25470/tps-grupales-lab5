@@ -20,4 +20,10 @@ public class NegLibro implements InegLibro {
 		return daoLibro.getAll();
 	}
 
+	@Override
+	public Libro obtenerUno(String ISBN) {
+		// TODO Auto-generated method stub
+		return daoLibro.getOne(ISBN);
+	}
+
 }

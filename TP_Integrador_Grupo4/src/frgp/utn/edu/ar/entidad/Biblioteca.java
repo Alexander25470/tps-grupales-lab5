@@ -6,12 +6,16 @@ import java.util.Date;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.springframework.stereotype.Component;
 
+@Component
 @Entity
 @Table(name="Bibliotecas")
 public class Biblioteca implements Serializable{
@@ -19,14 +23,14 @@ public class Biblioteca implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@Column
+	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private int id;
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "libro")
 	private Libro libro;
 	@Column
 	private Date fechaDeAlta;
-	@Column int Estado;
+	@Column int estado;
 
 	public Biblioteca() {
 	
@@ -37,7 +41,7 @@ public class Biblioteca implements Serializable{
 		this.id = id;
 		this.libro = libro;
 		this.fechaDeAlta = fechaDeAlta;
-		Estado = estado;
+		this.estado = estado;
 	}
 
 	public int getId() {
@@ -65,16 +69,16 @@ public class Biblioteca implements Serializable{
 	}
 
 	public int getEstado() {
-		return Estado;
+		return estado;
 	}
 
 	public void setEstado(int estado) {
-		Estado = estado;
+		this.estado = estado;
 	}
 	
 
 	@Override
 	public String toString() {
-		return "Biblioteca [id=" + id + ", libro=" + libro + ", fechaDeAlta=" + fechaDeAlta + ", Estado=" + Estado + "]";
+		return "Biblioteca [id=" + id + ", libro=" + libro + ", fechaDeAlta=" + fechaDeAlta + ", Estado=" + estado + "]";
 	}
 }
