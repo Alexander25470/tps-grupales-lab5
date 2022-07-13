@@ -61,6 +61,33 @@ body {
 
 .buttonSuccess:hover {opacity: 1}
 
+.alertSuccess {
+  padding: 20px;
+  background-color: #4CAF50;
+  color: white;
+}
+
+.alertDanger {
+  padding: 20px;
+  background-color: #fc4040;
+  color: white;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
 </style>
 </head>
 <body>
@@ -78,13 +105,15 @@ body {
 			</div>
 		</div>
 		
-		<form action="agregarPestamo.html" method="get">
+		<form action="altaPrestamoPost.html" method="get">
 			<div class="row d-flex justify-content-center">
 				<div class="col-6 d-flex justify-content-center">
 					<div class="input-group mb-3">
 						<span class="input-group-text" id="basic-addon1">Biblioteca</span>
-						<select class="form-select" type="text" name="txtLibro">
-							<option id="1">libro 1</option>
+						<select class="form-select" name="idBiblioteca">
+							<c:forEach var="bib" items="${bibliotecas}">
+								<option value="${bib.id}">${bib.libro.titulo} - Cod. Biblioteca ${bib.id} - Cod. Libro ${bib.libro.ISBN}</option>
+							</c:forEach>
 						</select>
 					</div>
 				</div>
@@ -94,7 +123,7 @@ body {
 				<div class="col-6 d-flex justify-content-center">
 					<div class="input-group mb-3">
 						<span class="input-group-text" id="basic-addon1">Fecha de Prestamo</span>
-					  	<input class="form-control" type="date" name="txtfechaPrestamo">
+					  	<input class="form-control" type="date" name="txtFechaPrestamo">
 					</div>
 				</div>
 			</div>
@@ -103,7 +132,7 @@ body {
 				<div class="col-6 d-flex justify-content-center">
 					<div class="input-group mb-3">
 						<span class="input-group-text" id="basic-addon1">Cantidad de Días</span>
-					  	<input class="form-control" type="number" name="txtfechaPrestamo">
+					  	<input class="form-control" type="number" name="txtCantDias">
 					</div>
 				</div>
 			</div>
@@ -112,8 +141,10 @@ body {
 				<div class="col-6 d-flex justify-content-center">
 					<div class="input-group mb-3">
 						<span class="input-group-text" id="basic-addon1">Cliente</span>
-						<select class="form-select" type="text" name="txtCliente">
-							<option id="1">cliente 1</option>
+						<select class="form-select" name="idCliente">
+							<c:forEach var="cli" items="${clientes}">
+								<option value="${cli.id}">${cli.apellido}, ${cli.nombre} - DNI ${cli.dni}</option>
+							</c:forEach>
 						</select>
 					</div>
 				</div>
@@ -124,10 +155,17 @@ body {
 					<input class="buttonSuccess" type="submit" name="btnAgregarPersona" value="Aceptar">
 				</div>
 			</div>
+			
+			<div class="row d-flex justify-content-center p-5">
+				<div class="col-6 d-flex justify-content-center">
+					<div class="${classEstado}">
+						<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+					  	${estadoAgregarPrestamo}
+					</div>
+				</div>
+			</div>
 		</form>
 	</div>
-
-${estadoAgregarPersona}
 
 </body>
 </html>

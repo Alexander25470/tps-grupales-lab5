@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import frgp.utn.edu.ar.dao.IdaoBiblioteca;
 import frgp.utn.edu.ar.entidad.Biblioteca;
+import frgp.utn.edu.ar.entidad.Cliente;
 import frgp.utn.edu.ar.negocio.InegBiblioteca;
 
 @Service("servicioBiblioteca")
@@ -27,6 +28,9 @@ public class NegBiblioteca implements InegBiblioteca{
 		return daoBiblioteca.create(biblioteca);
 	}
 	
-	
+	@Override
+	public Biblioteca obtenerUno(int id) {
+		return daoBiblioteca.getOne(id);
+	}
 
 }
