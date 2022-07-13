@@ -101,7 +101,7 @@ public class DaoGenerico<T> implements IdaoGenerico<T>{
 	@Override
 	public T getOne(Serializable id) {
 		Session session = conexion.abrirConexion();
-		T entidad = (T)session.get(type.getName(), id);
+		T entidad = (T)session.load(type.getName(), id);
 		session.close();
 		return entidad;
 	}

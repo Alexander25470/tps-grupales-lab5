@@ -81,7 +81,6 @@ public class ControladorPrestamos {
 		}
 		
 		prestamo.setFechaDeAlta(fechaAlta);
-		
 		boolean estado= servicioPrestamo.agregarPrestamo(prestamo);
 		String cartel="No se pudo agregar el Prestamo";
 		String classEstado = "alertDanger";
