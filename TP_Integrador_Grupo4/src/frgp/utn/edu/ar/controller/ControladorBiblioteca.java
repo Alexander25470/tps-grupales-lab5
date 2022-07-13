@@ -95,9 +95,9 @@ public class ControladorBiblioteca {
 	{
 		ModelAndView MV = new ModelAndView();
 		Biblioteca biblioteca = servicioBiblioteca.obtenerUno(idBiblioteca);
-		for (Prestamo prestamo: biblioteca.getPrestamos()) {
-			servicioPrestamo.eliminar(prestamo);
-		}
+		//for (Prestamo prestamo: biblioteca.getPrestamos()) {
+		//	servicioPrestamo.eliminar(prestamo);
+		//}
 		
 		boolean resultado = servicioBiblioteca.eliminar(biblioteca);
 		

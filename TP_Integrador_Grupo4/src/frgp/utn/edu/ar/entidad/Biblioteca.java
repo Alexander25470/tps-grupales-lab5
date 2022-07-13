@@ -34,7 +34,7 @@ public class Biblioteca implements Serializable{
 	@Column
 	private Date fechaDeAlta;
 	@Column int estado;
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "cliente")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "biblioteca", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<Prestamo> prestamos;
 
 	public Biblioteca() {
