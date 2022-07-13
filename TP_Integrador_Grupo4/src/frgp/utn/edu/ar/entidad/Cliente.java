@@ -24,7 +24,7 @@ public class Cliente {
 	private String nombre;
 	@Column
 	private String apellido;
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name = "idNacionalidad")
 	private Nacionalidad nacionalidad;
 	@Column

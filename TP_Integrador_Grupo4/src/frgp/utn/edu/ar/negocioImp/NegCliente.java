@@ -35,5 +35,16 @@ public class NegCliente implements InegCliente {
 	public Cliente obtenerUno(int id) {
 		return daoCliente.getOne(id);
 	}
+	
+	@Override
+	public Cliente cargarUno(int id) {
+		return daoCliente.loadOne(id);
+	}
+
+	@Override
+	public boolean eliminar(Cliente c) {
+		// TODO Auto-generated method stub
+		return daoCliente.delete(c);
+	}
 
 }

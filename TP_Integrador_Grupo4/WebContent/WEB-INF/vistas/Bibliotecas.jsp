@@ -130,52 +130,15 @@ body {
 								<td>${biblioteca.fechaDeAlta}</td>
 								<td>${biblioteca.estado}</td>
 								<td class="d-flex justify-content-center">
-									<button class="buttonDelete" >Eliminar</button>
+									<form action="eliminarBiblioteca.html" method="get">
+										<button class="buttonDelete" name="idBiblioteca" value="${biblioteca.id}" type="submit" >Eliminar</button>
+									</form>
 									<a href="modificarBiblioteca.html?idBiblioteca=${biblioteca.id}">
 										<button class="buttonEdit" >Editar</button>
 									</a>
 								</td>
 							</tr>
 						</c:forEach>
-						<tr>
-							<td>ID</td>
-							<td>ISBN</td>
-							<td>Nombre libro</td>
-							<td>Fecha alta</td>
-							<td>Estado</td>
-							<td class="d-flex justify-content-center">
-								<button class="buttonDelete" >Eliminar</button>
-								<a href="modificarBiblioteca.html?idBiblioteca=1">
-									<button class="buttonEdit" >Editar</button>
-								</a>
-							</td>
-						</tr>
-						<tr>
-							<td>ID</td>
-							<td>ISBN</td>
-							<td>Nombre libro</td>
-							<td>Fecha alta</td>
-							<td>Estado</td>
-							<td class="d-flex justify-content-center">
-								<button class="buttonDelete" >Eliminar</button>
-								<a href="modificarBiblioteca.html?idBiblioteca=1">
-									<button class="buttonEdit" >Editar</button>
-								</a>
-							</td>
-						</tr>
-						<tr>
-							<td>ID</td>
-							<td>ISBN</td>
-							<td>Nombre libro</td>
-							<td>Fecha alta</td>
-							<td>Estado</td>
-							<td class="d-flex justify-content-center">
-								<button class="buttonDelete" >Eliminar</button>
-								<a href="modificarBiblioteca.html?idBiblioteca=1">
-									<button class="buttonEdit" >Editar</button>
-								</a>
-							</td>
-						</tr>
 					</tbody>
 				</table>
 			</div>

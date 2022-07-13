@@ -7,5 +7,6 @@ import frgp.utn.edu.ar.entidad.Prestamo;
 public interface InegPrestamo {
 
 	public boolean agregarPrestamo(Prestamo c);
+	public boolean eliminar(Prestamo c);
 	
 }

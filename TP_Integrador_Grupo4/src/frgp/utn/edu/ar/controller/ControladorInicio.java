@@ -28,4 +28,13 @@ public class ControladorInicio {
 		MV.setViewName("Inicio");
 		return MV;
 	}
+	
+	@RequestMapping("cerrarSesion.html")
+	public String cerrarSesion(HttpSession session)
+	{
+		ModelAndView MV = new ModelAndView();
+		session.removeAttribute("usuario");
+		MV.setViewName("Inicio");
+		return "redirect:/inicio.html";
+	}
 }

@@ -67,7 +67,7 @@ public class DaoGenerico<T> implements IdaoGenerico<T>{
 		boolean aux = true;
 		try
 		{
-			session.save(t); 
+			session.delete(t);
 			tx = session.getTransaction();
 			tx.commit();
 		}
@@ -86,7 +86,7 @@ public class DaoGenerico<T> implements IdaoGenerico<T>{
 		boolean aux = true;
 		try
 		{
-			session.delete(t); 
+			session.update(t); 
 			tx = session.getTransaction();
 			tx.commit();
 		}
@@ -100,6 +100,14 @@ public class DaoGenerico<T> implements IdaoGenerico<T>{
 	}
 	@Override
 	public T getOne(Serializable id) {
+		Session session = conexion.abrirConexion();
+		T entidad = (T)session.get(type.getName(), id);
+		session.close();
+		return entidad;
+	}
+	
+	@Override
+	public T loadOne(Serializable id) {
 		Session session = conexion.abrirConexion();
 		T entidad = (T)session.load(type.getName(), id);
 		session.close();

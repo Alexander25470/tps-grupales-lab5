@@ -104,4 +104,24 @@ public class ControladorCliente {
 		MV.addObject("nacionalidades",nacionalidades);
 		return MV;
 	}
+	
+	@RequestMapping(value= "/eliminarCliente.html", method=RequestMethod.GET)
+	public ModelAndView EliminarCliente(int idCliente)
+	{
+		ModelAndView MV = new ModelAndView();
+		
+		Cliente cliente = servicioCliente.cargarUno(idCliente);
+		boolean resultado = servicioCliente.eliminar(cliente);
+		String mensaje = "Error al eliminar cliente";
+		if(resultado) {
+			mensaje = "Cliente eliminado";
+		}
+		
+		List<Cliente> clientes = servicioCliente.listarClientes("");
+		MV.setViewName("Clientes");
+		MV.addObject("clientes",clientes);
+		MV.addObject("mensaje", mensaje);
+		return MV;
+	}
+	
 }

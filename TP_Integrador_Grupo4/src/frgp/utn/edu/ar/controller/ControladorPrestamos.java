@@ -65,8 +65,8 @@ public class ControladorPrestamos {
 	public ModelAndView altaPrestamoPost(Integer idBiblioteca, String txtFechaPrestamo, Integer txtCantDias, Integer idCliente)
 	{
 		ModelAndView MV = new ModelAndView();
-		Biblioteca biblioteca = servicioBiblioteca.obtenerUno(idBiblioteca);
-		Cliente cliente = servicioCliente.obtenerUno(idCliente);
+		Biblioteca biblioteca = servicioBiblioteca.cargarUno(idBiblioteca);
+		Cliente cliente = servicioCliente.cargarUno(idCliente);
 		
 		prestamo.setBiblioteca(biblioteca);
 		prestamo.setCantidadDeDias(txtCantDias);

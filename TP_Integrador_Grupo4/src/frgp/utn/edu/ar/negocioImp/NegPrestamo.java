@@ -23,4 +23,10 @@ public class NegPrestamo implements InegPrestamo {
 		return daoPrestamo.create(c);
 	}
 
+	@Override
+	public boolean eliminar(Prestamo c) {
+		// TODO Auto-generated method stub
+		return daoPrestamo.delete(c);
+	}
+
 }

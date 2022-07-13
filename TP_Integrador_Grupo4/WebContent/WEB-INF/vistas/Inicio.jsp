@@ -141,6 +141,14 @@ body {
 				</form>
 			</div>
 		</div>
+		
+		<div class="row d-flex justify-content-center">
+			<div class="col-6 d-flex justify-content-center">
+				<form action="cerrarSesion.html" method="get">
+					<button class="buttonModulo" type="submit" value="Aceptar">Cerrar sesion</button>
+				</form>
+			</div>
+		</div>
 	</div>
 	
 	<div class="footer">

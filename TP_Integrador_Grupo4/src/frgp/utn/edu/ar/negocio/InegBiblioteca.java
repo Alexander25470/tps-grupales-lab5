@@ -7,5 +7,7 @@ import frgp.utn.edu.ar.entidad.Biblioteca;
 public interface InegBiblioteca {
 	public List<Biblioteca> obtenerTodas();
 	public boolean guardar(Biblioteca biblioteca);
+	public boolean eliminar(Biblioteca biblioteca);
 	Biblioteca obtenerUno(int id);
+	Biblioteca cargarUno(int id);
 }

@@ -13,9 +13,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 import frgp.utn.edu.ar.entidad.Biblioteca;
 import frgp.utn.edu.ar.entidad.Libro;
+import frgp.utn.edu.ar.entidad.Prestamo;
 import frgp.utn.edu.ar.negocioImp.NegBiblioteca;
 import frgp.utn.edu.ar.negocioImp.NegCliente;
 import frgp.utn.edu.ar.negocioImp.NegLibro;
+import frgp.utn.edu.ar.negocioImp.NegPrestamo;
 
 @Controller
 public class ControladorBiblioteca {
@@ -26,6 +28,9 @@ public class ControladorBiblioteca {
 	@Autowired
 	@Qualifier("servicioLibro")
 	private NegLibro servicioLibro;
+	@Autowired
+	@Qualifier("servicioPrestamo")
+	private NegPrestamo servicioPrestamo;
 	@Autowired
 	private Biblioteca biblioteca;
 	
@@ -85,5 +90,26 @@ public class ControladorBiblioteca {
 		MV.setViewName("ModificarBiblioteca");
 		return MV;
 	}
-	
+	@RequestMapping(value= "/eliminarBiblioteca.html", method=RequestMethod.GET)
+	public ModelAndView EliminarBiblioteca(int idBiblioteca)
+	{
+		ModelAndView MV = new ModelAndView();
+		Biblioteca biblioteca = servicioBiblioteca.obtenerUno(idBiblioteca);
+		for (Prestamo prestamo: biblioteca.getPrestamos()) {
+			servicioPrestamo.eliminar(prestamo);
+		}
+		
+		boolean resultado = servicioBiblioteca.eliminar(biblioteca);
+		
+		String mensaje = "Error al eliminar Biblioteca";
+		if(resultado) {
+			mensaje = "Biblioteca eliminada";
+		}
+		
+		List<Biblioteca> bibliotecas = servicioBiblioteca.obtenerTodas();
+		MV.setViewName("Bibliotecas");
+		MV.addObject("biblioteca", bibliotecas);
+		MV.addObject("mensaje", mensaje);
+		return MV;
+	}
 }

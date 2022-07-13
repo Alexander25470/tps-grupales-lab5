@@ -136,7 +136,9 @@ body {
 								<fmt:formatDate value="${cliente.fechaNacimiento}" pattern="yyyy-MM-dd" />
 								</td>
 								<td>
-									<button class="buttonDelete" >Eliminar</button>
+									<form action="eliminarCliente.html" method="get">
+										<button class="buttonDelete" name="idCliente" value="${cliente.id}" type="submit" >Eliminar</button>
+									</form>
 									<a href="modificarCliente.html?idCliente=${cliente.id}">
 										<button class="buttonEdit"  >Editar</button>
 									</a>
@@ -145,6 +147,8 @@ body {
 						</c:forEach>
 					</tbody>
 				</table>
+				
+				<h2>${mensaje}</h2>
 			</div>
 		</div>
 	</div>

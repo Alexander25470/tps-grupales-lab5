@@ -19,14 +19,14 @@ public class Prestamo {
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private int id;
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name = "biblioteca")
 	private Biblioteca biblioteca;
 	@Column
 	private Date fechaDeAlta;
 	@Column
 	private int cantidadDeDias;
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name = "cliente")
 	private Cliente cliente;
 	

@@ -2,15 +2,18 @@ package frgp.utn.edu.ar.entidad;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
@@ -25,12 +28,14 @@ public class Biblioteca implements Serializable{
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private int id;
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name = "libro")
 	private Libro libro;
 	@Column
 	private Date fechaDeAlta;
 	@Column int estado;
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "cliente")
+	private List<Prestamo> prestamos;
 
 	public Biblioteca() {
 	
@@ -76,6 +81,14 @@ public class Biblioteca implements Serializable{
 		this.estado = estado;
 	}
 	
+
+	public List<Prestamo> getPrestamos() {
+		return prestamos;
+	}
+
+	public void setPrestamos(List<Prestamo> prestamos) {
+		this.prestamos = prestamos;
+	}
 
 	@Override
 	public String toString() {

@@ -32,5 +32,16 @@ public class NegBiblioteca implements InegBiblioteca{
 	public Biblioteca obtenerUno(int id) {
 		return daoBiblioteca.getOne(id);
 	}
+	
+	@Override
+	public Biblioteca cargarUno(int id) {
+		return daoBiblioteca.loadOne(id);
+	}
+
+	@Override
+	public boolean eliminar(Biblioteca biblioteca) {
+		// TODO Auto-generated method stub
+		return daoBiblioteca.delete(biblioteca);
+	}
 
 }
