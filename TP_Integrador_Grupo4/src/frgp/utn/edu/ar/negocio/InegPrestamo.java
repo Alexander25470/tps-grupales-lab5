@@ -9,5 +9,6 @@ public interface InegPrestamo {
 	public boolean agregarPrestamo(Prestamo c);
 	public boolean eliminar(Prestamo c);
 	public List<Prestamo> obtenerTodos();
+	public Prestamo obtenerPrestamo(int id);
 	
 }

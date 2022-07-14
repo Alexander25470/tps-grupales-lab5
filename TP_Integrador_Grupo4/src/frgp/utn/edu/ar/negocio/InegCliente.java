@@ -11,4 +11,5 @@ public interface InegCliente {
 	public Cliente obtenerUno(int id);
 	public Cliente cargarUno(int id);
 	public boolean eliminar(Cliente c);
+	public boolean actualizar(Cliente c);
 }

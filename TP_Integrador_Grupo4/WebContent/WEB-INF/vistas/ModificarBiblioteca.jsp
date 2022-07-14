@@ -13,7 +13,7 @@
 <body>
 
 <h1>Modificar biblioteca</h1>
-<form action="clientes.html" method="get">
+<form action="bibliotecas.html" method="get">
 	<button type="submit" value="Aceptar">Volver</button>
 </form>
 

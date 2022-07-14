@@ -47,4 +47,10 @@ public class NegCliente implements InegCliente {
 		return daoCliente.delete(c);
 	}
 
+	@Override
+	public boolean actualizar(Cliente c) {
+		// TODO Auto-generated method stub
+		return daoCliente.update(c);
+	}
+
 }

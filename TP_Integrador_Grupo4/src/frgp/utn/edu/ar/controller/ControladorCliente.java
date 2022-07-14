@@ -105,6 +105,47 @@ public class ControladorCliente {
 		return MV;
 	}
 	
+	@RequestMapping(value= "/modificarClientePut.html", method=RequestMethod.GET)
+	public ModelAndView ModificarClientePut(int idCliente, Integer dni,String nombre, String apellido, Integer idNacionalidad,
+			String email, String localidad, String fechaNacimiento,
+			String direccion, String telefono)
+	{
+		ModelAndView MV = new ModelAndView();
+		List<Nacionalidad> nacionalidades = servicioNacionalidad.obtenerTodas();
+		cliente.setId(idCliente);
+		cliente.setDni(dni.toString());
+		cliente.setNombre(nombre);
+		cliente.setApellido(apellido);
+		Nacionalidad nac = servicioNacionalidad.obtenerUna(idNacionalidad);
+		cliente.setNacionalidad(nac);
+		cliente.setTelefono(telefono);
+		cliente.setDireccion(direccion);
+		cliente.setEmail(email);
+		cliente.setLocalidad(localidad);
+		Date fechaNac= new Date();
+		try {
+			fechaNac = new SimpleDateFormat("yyyy-MM-dd").parse(fechaNacimiento);
+			System.out.println(fechaNac);
+		} catch (Exception e){
+			System.out.println(fechaNacimiento);
+		}
+		cliente.setFechaNacimiento(fechaNac);
+		
+		boolean estado= servicioCliente.actualizar(cliente);
+		String cartel="No se pudo editar la persona";
+		if(estado)
+		{
+			cartel="La persona ha sido editada exitosamente";
+		}
+		Cliente cli = servicioCliente.obtenerUno(idCliente);
+		
+		MV.setViewName("ModificarCliente");
+		MV.addObject("estadoModificarPersona",cartel);
+		MV.addObject("cliente",cli);
+		MV.addObject("nacionalidades",nacionalidades);
+		return MV;
+	}
+	
 	@RequestMapping(value= "/eliminarCliente.html", method=RequestMethod.GET)
 	public ModelAndView EliminarCliente(int idCliente)
 	{

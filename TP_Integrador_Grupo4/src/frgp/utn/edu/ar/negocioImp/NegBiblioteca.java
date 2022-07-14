@@ -17,14 +17,15 @@ public class NegBiblioteca implements InegBiblioteca{
 	private IdaoBiblioteca daoBiblioteca;
 	
 	@Override
-	public List<Biblioteca> obtenerTodas() {
+	public List<Biblioteca> obtenerTodas(int estado) {
 		// TODO Auto-generated method stub
-		return daoBiblioteca.getAll();
+		return daoBiblioteca.getAll("where "+ estado +" = 0 OR estado = " + estado);
 	}
 
 	@Override
 	public boolean guardar(Biblioteca biblioteca){
 		// TODO Auto-generated method stub
+		biblioteca.setEstado(1);
 		return daoBiblioteca.create(biblioteca);
 	}
 	
@@ -42,6 +43,18 @@ public class NegBiblioteca implements InegBiblioteca{
 	public boolean eliminar(Biblioteca biblioteca) {
 		// TODO Auto-generated method stub
 		return daoBiblioteca.delete(biblioteca);
+	}
+
+	@Override
+	public boolean marcarEnBiblioteco(Biblioteca b) {
+		b.setEstado(1);
+		return daoBiblioteca.update(b);
+	}
+
+	@Override
+	public boolean marcarPrestado(Biblioteca b) {
+		b.setEstado(2);
+		return daoBiblioteca.update(b);
 	}
 
 }

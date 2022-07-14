@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import frgp.utn.edu.ar.daoImp.DaoPrestamo;
 import frgp.utn.edu.ar.entidad.Biblioteca;
 import frgp.utn.edu.ar.entidad.Cliente;
 import frgp.utn.edu.ar.entidad.Nacionalidad;
@@ -52,7 +53,7 @@ public class ControladorPrestamos {
 	public ModelAndView altaPrestamo()
 	{
 		ModelAndView MV = new ModelAndView();
-		List<Biblioteca> bibliotecas = servicioBiblioteca.obtenerTodas();
+		List<Biblioteca> bibliotecas = servicioBiblioteca.obtenerTodas(1);
 		List<Cliente> clientes = servicioCliente.listarClientes("");
 		
 		MV.setViewName("AltaPrestamo");
@@ -66,8 +67,9 @@ public class ControladorPrestamos {
 	public ModelAndView altaPrestamoPost(Integer idBiblioteca, String txtFechaPrestamo, Integer txtCantDias, Integer idCliente)
 	{
 		ModelAndView MV = new ModelAndView();
-		Biblioteca biblioteca = servicioBiblioteca.cargarUno(idBiblioteca);
+		Biblioteca biblioteca = servicioBiblioteca.obtenerUno(idBiblioteca);
 		Cliente cliente = servicioCliente.cargarUno(idCliente);
+		
 		
 		prestamo.setBiblioteca(biblioteca);
 		prestamo.setCantidadDeDias(txtCantDias);
@@ -82,7 +84,9 @@ public class ControladorPrestamos {
 		}
 		
 		prestamo.setFechaDeAlta(fechaAlta);
+		servicioBiblioteca.marcarPrestado(biblioteca);
 		boolean estado= servicioPrestamo.agregarPrestamo(prestamo);
+		
 		String cartel="No se pudo agregar el Prestamo";
 		String classEstado = "alertDanger";
 		
@@ -92,7 +96,7 @@ public class ControladorPrestamos {
 			classEstado = "alertSuccess";
 		}
 		
-		List<Biblioteca> bibliotecas = servicioBiblioteca.obtenerTodas();
+		List<Biblioteca> bibliotecas = servicioBiblioteca.obtenerTodas(1);
 		List<Cliente> clientes = servicioCliente.listarClientes("");
 
 		MV.addObject("bibliotecas", bibliotecas);
@@ -104,5 +108,22 @@ public class ControladorPrestamos {
 		return MV;
 	}
 	
-	
+	@RequestMapping(value= "/devolverPrestamo.html", method=RequestMethod.GET)
+	public ModelAndView devolverPrestamo(int idPrestamo)
+	{
+		ModelAndView MV = new ModelAndView();
+		
+		Prestamo prestamo = servicioPrestamo.obtenerPrestamo(idPrestamo);
+		Biblioteca biblioteca = prestamo.getBiblioteca();
+		boolean estado = servicioBiblioteca.marcarEnBiblioteco(biblioteca);
+		String mensaje = "Error al devolver libro";
+		if(estado) {
+			mensaje = "Libro devuelto";
+		}
+		List<Prestamo> prestamos = servicioPrestamo.obtenerTodos();
+		MV.setViewName("Prestamos");
+		MV.addObject("prestamos", prestamos);
+		MV.addObject("mensaje", mensaje);
+		return MV;
+	}
 }

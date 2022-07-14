@@ -35,10 +35,10 @@ public class ControladorBiblioteca {
 	private Biblioteca biblioteca;
 	
 	@RequestMapping(value= "/bibliotecas.html", method=RequestMethod.GET)
-	public ModelAndView Clientes()
+	public ModelAndView Clientes(Integer estadoBiblioteca)
 	{
 		ModelAndView MV = new ModelAndView();
-		List<Biblioteca> biblioteca = servicioBiblioteca.obtenerTodas();
+		List<Biblioteca> biblioteca = servicioBiblioteca.obtenerTodas(estadoBiblioteca == null? 0 : estadoBiblioteca);
 		
 		MV.setViewName("Bibliotecas");
 		MV.addObject("biblioteca", biblioteca);
@@ -106,7 +106,7 @@ public class ControladorBiblioteca {
 			mensaje = "Biblioteca eliminada";
 		}
 		
-		List<Biblioteca> bibliotecas = servicioBiblioteca.obtenerTodas();
+		List<Biblioteca> bibliotecas = servicioBiblioteca.obtenerTodas(0);
 		MV.setViewName("Bibliotecas");
 		MV.addObject("biblioteca", bibliotecas);
 		MV.addObject("mensaje", mensaje);

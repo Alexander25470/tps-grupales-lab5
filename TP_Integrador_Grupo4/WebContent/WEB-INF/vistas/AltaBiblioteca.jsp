@@ -66,13 +66,13 @@ body {
 <body>
 
 	<div class="header">
-			<h1>Alta Biblioteca</h1>
+		<h1>Alta Biblioteca</h1>
 	</div>
 	
 	<div class="container p-5">
 		<div class="row">
 			<div class="col-12 d-flex justify-content-center p-2 mb-2">
-				<form action="clientes.html" method="get">
+				<form action="bibliotecas.html" method="get">
 					<button class="buttonModulo" type="submit" value="Aceptar">Volver</button>
 				</form>
 			</div>

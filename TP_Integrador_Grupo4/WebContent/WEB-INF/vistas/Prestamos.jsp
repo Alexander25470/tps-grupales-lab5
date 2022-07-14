@@ -101,11 +101,18 @@ body {
 								<td>${prestamo.fechaDeAlta}</td>
 								<td>${prestamo.cantidadDeDias}</td>
 								<td>DNI: ${prestamo.cliente.dni} - Nombres: ${prestamo.cliente.nombre} ${prestamo.cliente.apellido}</td>
-								<td class="d-flex justify-content-center" ><button class="buttonEdit">Devolver</button></td>
+								<td class="d-flex justify-content-center" >
+									<c:if test="${prestamo.biblioteca.estado == '2'}">
+										<form action="devolverPrestamo.html" method="get">
+											<button class="buttonEdit" name="idPrestamo"  value="${prestamo.id}" type="submit">Devolver</button>
+										</form>
+									</c:if>
+								</td>
 							</tr>
 						</c:forEach>
 					</tbody>
 				</table>
+				<h2>${mensaje}</h2>
 			</div>
 		</div>
 	</div>

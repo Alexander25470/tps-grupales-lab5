@@ -99,7 +99,7 @@ body {
 		
 		<div class="row d-flex justify-content-center p-4">
 			<div class="col-12 d-flex justify-content-end pb-2">
-				<form class="d-flex flex-row" target="bibliotecas.html">
+				<form class="d-flex flex-row" action="bibliotecas.html" method="get">
 					<select class="form-select" name="estadoBiblioteca">
 						<option value="0">Todos</option>
 						<option value="1">En biblioteca</option>

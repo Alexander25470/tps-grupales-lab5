@@ -18,28 +18,35 @@
 	<button type="submit" value="Aceptar">Volver</button>
 </form>
 
-<form action="modificarCliente.html" method="get">
-	Id cliente: 123 <br/>
+<form action="modificarClientePut.html" method="get">
+	Id cliente: ${cliente.id} <br/>
+	<input name="idCliente" value="${cliente.id}" style="display: none"/>
 	Ingrese dni: <br/>
-	<input type="number" name="txtDni" value="${cliente.dni}"> <br/>
+	<input type="number" name="dni" value="${cliente.dni}"> <br/>
 	Ingrese nombre:<br/>
-	<input type="text" name="txtNombre" value="${cliente.nombre}"><br/>
+	<input type="text" name="nombre" value="${cliente.nombre}"><br/>
 	Ingrese apellido:<br/>
-	<input type="text" name="txtApellido" value="${cliente.apellido}"><br/>
+	<input type="text" name="apellido" value="${cliente.apellido}"><br/>
 	Seleccione nacionalidad:<br/>
-	<select type="text" name="txtNacionalidad" value="${cliente.nacionalidad.id}">
-		<option id="1">Argentina</option>
+	<select type="text" name="idNacionalidad" value="${cliente.nacionalidad.id}">
+		<c:forEach var="nacionalidad" items="${nacionalidades}">
+			<option value="${nacionalidad.id}">${nacionalidad.descripcion}</option>
+		</c:forEach>
 	</select><br/>
 	Ingrese Email:<br/>
-	<input type="text" name="txtEmail" value="${cliente.email}"><br/>
+	<input type="text" name="email" value="${cliente.email}"><br/>
 	Ingrese localidad:<br/>
-	<input type="text" name="txtLocalidad" value="${cliente.localidad}"><br/>
+	<input type="text" name="localidad" value="${cliente.localidad}"><br/>
+	Ingrese direccion:<br/>
+	<input type="text" name="direccion" value="${cliente.direccion}"><br/>
+	Ingrese telefono:<br/>
+	<input type="text" name="telefono" value="${cliente.telefono}"><br/>
 	Ingrese fecha de nacimiento:<br/>
-	<input type="date" name="txtfechaNacimiento" value="<fmt:formatDate value="${cliente.fechaNacimiento}" pattern="yyyy-MM-dd" />"><br/><br/>
-	<input type="submit" name="btnAgregarPersona" value="Aceptar">
+	<input type="date" name="fechaNacimiento" value="<fmt:formatDate value="${cliente.fechaNacimiento}" pattern="yyyy-MM-dd" />"><br/><br/>
+	<button type="submit">Aceptar</button>
 </form>
 
-${estadoAgregarPersona}
+${estadoModificarPersona}
 
 </body>
 </html>
