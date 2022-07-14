@@ -29,4 +29,10 @@ public class NegPrestamo implements InegPrestamo {
 		return daoPrestamo.delete(c);
 	}
 
+	@Override
+	public List<Prestamo> obtenerTodos() {
+		// TODO Auto-generated method stub
+		return daoPrestamo.getAll();
+	}
+
 }

@@ -42,8 +42,9 @@ public class ControladorPrestamos {
 	public ModelAndView Clientes()
 	{
 		ModelAndView MV = new ModelAndView();
-
+		List<Prestamo> prestamos = servicioPrestamo.obtenerTodos();
 		MV.setViewName("Prestamos");
+		MV.addObject("prestamos", prestamos);
 		return MV;
 	}
 	

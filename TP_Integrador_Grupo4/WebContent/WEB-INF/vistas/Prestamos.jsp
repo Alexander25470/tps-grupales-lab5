@@ -94,38 +94,16 @@ body {
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>ID</td>
-							<td>Biblioteca</td>
-							<td>Fecha de prestamo</td>
-							<td>Cantidad de dias</td>
-							<td>Cliente</td>
-							<td class="d-flex justify-content-center" ><button class="buttonEdit">Devolver</button></td>
-						</tr>
-						<tr>
-							<td>ID</td>
-							<td>Biblioteca</td>
-							<td>Fecha de prestamo</td>
-							<td>Cantidad de dias</td>
-							<td>Cliente</td>
-							<td class="d-flex justify-content-center" ><button class="buttonEdit">Devolver</button></td>
-						</tr>
-						<tr>
-							<td>ID</td>
-							<td>Biblioteca</td>
-							<td>Fecha de prestamo</td>
-							<td>Cantidad de dias</td>
-							<td>Cliente</td>
-							<td class="d-flex justify-content-center" ><button class="buttonEdit">Devolver</button></td>
-						</tr>
-						<tr>
-							<td>ID</td>
-							<td>Biblioteca</td>
-							<td>Fecha de prestamo</td>
-							<td>Cantidad de dias</td>
-							<td>Cliente</td>
-							<td class="d-flex justify-content-center" ><button class="buttonEdit">Devolver</button></td>
-						</tr>
+						<c:forEach var="prestamo" items="${prestamos}">					
+							<tr>
+								<td>${prestamo.id}</td>
+								<td>ID: ${prestamo.biblioteca.id} Libro: ${prestamo.biblioteca.libro.ISBN} - ${prestamo.biblioteca.libro.titulo}</td>
+								<td>${prestamo.fechaDeAlta}</td>
+								<td>${prestamo.cantidadDeDias}</td>
+								<td>DNI: ${prestamo.cliente.dni} - Nombres: ${prestamo.cliente.nombre} ${prestamo.cliente.apellido}</td>
+								<td class="d-flex justify-content-center" ><button class="buttonEdit">Devolver</button></td>
+							</tr>
+						</c:forEach>
 					</tbody>
 				</table>
 			</div>
