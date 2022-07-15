@@ -18,5 +18,6 @@
         <mapping class="frgp.utn.edu.ar.entidad.Libro"/>
         <mapping class="frgp.utn.edu.ar.entidad.Nacionalidad"/>
         <mapping class="frgp.utn.edu.ar.entidad.Prestamo"/>
+        <mapping class="frgp.utn.edu.ar.entidad.Usuario"/>
     </session-factory>
 </hibernate-configuration>

@@ -155,6 +155,6 @@ body {
 		<p><h2>Bienvenido/a: ${usuario}</h2></p>
 	</div>
 </c:if>
-
+${cartel}
 </body>
 </html>

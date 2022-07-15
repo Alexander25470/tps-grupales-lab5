@@ -57,4 +57,10 @@ public class NegBiblioteca implements InegBiblioteca{
 		return daoBiblioteca.update(b);
 	}
 
+	@Override
+	public boolean actualizar(Biblioteca biblioteca) {
+		// TODO Auto-generated method stub
+		return daoBiblioteca.update(biblioteca);
+	}
+
 }

@@ -86,10 +86,48 @@ public class ControladorBiblioteca {
 	public ModelAndView ModificarBiblioteca(int idBiblioteca)
 	{
 		ModelAndView MV = new ModelAndView();
-
+		List<Libro> libros = servicioLibro.obtenerTodos();
+		Biblioteca biblioteca = servicioBiblioteca.obtenerUno(idBiblioteca);
+		
+		
 		MV.setViewName("ModificarBiblioteca");
+		MV.addObject("libros",libros);
+		MV.addObject("biblioteca",biblioteca);
 		return MV;
 	}
+	
+	@RequestMapping(value= "/modificarBibliotecaPut.html", method=RequestMethod.GET)
+	public ModelAndView ModificarBiblioteca2(int idBiblioteca, String fechaAlta, String ISBN)
+	{
+		ModelAndView MV = new ModelAndView();
+		biblioteca.setId(idBiblioteca);
+		Libro libro = servicioLibro.obtenerUno(ISBN);
+		biblioteca.setLibro(libro);
+		Date fechaAlta2= new Date();
+		try {
+			fechaAlta2 = new SimpleDateFormat("yyyy-MM-dd").parse(fechaAlta);
+			System.out.println(fechaAlta2);
+		} catch (Exception e){
+			System.out.println(fechaAlta);
+		}
+		
+		biblioteca.setFechaDeAlta(fechaAlta2);
+		boolean estado=servicioBiblioteca.actualizar(biblioteca);
+		String cartel="No se pudo modificar la biblioteca";
+		if(estado)
+		{
+			cartel="Se modifica la biblioteca correctamente";
+		}
+		MV.addObject("estadoAgregar",cartel);
+		
+		List<Libro> libros = servicioLibro.obtenerTodos();
+		Biblioteca biblioteca = servicioBiblioteca.obtenerUno(idBiblioteca);
+		MV.setViewName("ModificarBiblioteca");
+		MV.addObject("libros",libros);
+		MV.addObject("biblioteca",biblioteca);
+		return MV;
+	}
+	
 	@RequestMapping(value= "/eliminarBiblioteca.html", method=RequestMethod.GET)
 	public ModelAndView EliminarBiblioteca(int idBiblioteca)
 	{

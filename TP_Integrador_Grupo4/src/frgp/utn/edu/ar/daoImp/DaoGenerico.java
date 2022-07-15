@@ -113,5 +113,12 @@ public class DaoGenerico<T> implements IdaoGenerico<T>{
 		session.close();
 		return entidad;
 	}
+	@Override
+	public T findOne(String consulta) {
+		Session session = conexion.abrirConexion();
+		T result = (T)session.createQuery("from " + type.getName() + " " +consulta).uniqueResult();
+		session.close();
+		return result;
+	}
 
 }
