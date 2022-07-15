@@ -138,9 +138,12 @@ public class ControladorCliente {
 		
 		boolean estado= servicioCliente.actualizar(cliente);
 		String cartel="No se pudo editar la persona";
+		String classEstado = "alertDanger";
+		
 		if(estado)
 		{
 			cartel="La persona ha sido editada exitosamente";
+			classEstado = "alertSuccess";
 		}
 		Cliente cli = servicioCliente.obtenerUno(idCliente);
 		
@@ -148,6 +151,7 @@ public class ControladorCliente {
 		MV.addObject("estadoModificarPersona",cartel);
 		MV.addObject("cliente",cli);
 		MV.addObject("nacionalidades",nacionalidades);
+		MV.addObject("classEstado",classEstado);
 		return MV;
 	}
 	
