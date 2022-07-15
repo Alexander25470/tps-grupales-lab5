@@ -35,11 +35,12 @@ public class ControladorInicio {
 		
 		Usuario usuario = servicioUsuario.iniciarSesion(user, password);
 		String cartel = "";
-		if(usuario != null && usuario.getPass() == password) {
+		if(usuario != null) {
 			session.setAttribute("usuario", user);
 			MV.addObject("usuario", user);
 		} else {			
 			cartel = "Credenciales incorrectas";
+			session.removeAttribute("usuario");
 		}
 		
 		MV.addObject("cartel", cartel);
