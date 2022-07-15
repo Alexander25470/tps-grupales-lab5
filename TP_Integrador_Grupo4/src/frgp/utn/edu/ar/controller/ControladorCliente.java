@@ -83,12 +83,17 @@ public class ControladorCliente {
 		
 		boolean estado= servicioCliente.agregarCliente(cliente);
 		String cartel="No se pudo agregar la persona";
+		String classEstado = "alertDanger";
+		
 		if(estado)
 		{
 			cartel="La persona ha sido agregada exitosamente";
+			classEstado = "alertSuccess";
 		}
+		
 		MV.addObject("estadoAgregarPersona",cartel);
 		MV.addObject("nacionalidades",nacionalidades);
+		MV.addObject("classEstado",classEstado);
 		MV.setViewName("AltaCliente");
 		return MV;
 	}
