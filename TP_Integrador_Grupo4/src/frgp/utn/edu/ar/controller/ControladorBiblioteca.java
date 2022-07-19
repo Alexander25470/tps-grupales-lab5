@@ -71,14 +71,18 @@ public class ControladorBiblioteca {
 		biblioteca.setFechaDeAlta(fechaAlta2);
 		boolean estado=servicioBiblioteca.guardar(biblioteca);
 		String cartel="No se pudo agregar a la base de datos";
+		String classEstado = "alertDanger";
+		
 		if(estado)
 		{
 			cartel="Se agrego la biblioteca correctamente";
+			classEstado = "alertSuccess";
 		}
 		MV.addObject("estadoAgregar",cartel);
 		List<Libro> libros = servicioLibro.obtenerTodos();
 		MV.setViewName("AltaBiblioteca");
 		MV.addObject("libros",libros);
+		MV.addObject("classEstado",classEstado);
 		return MV;
 	}
 	
@@ -114,9 +118,12 @@ public class ControladorBiblioteca {
 		biblioteca.setFechaDeAlta(fechaAlta2);
 		boolean estado=servicioBiblioteca.actualizar(biblioteca);
 		String cartel="No se pudo modificar la biblioteca";
+		String classEstado = "alertDanger";
+		
 		if(estado)
 		{
 			cartel="Se modifica la biblioteca correctamente";
+			classEstado = "alertSuccess";
 		}
 		MV.addObject("estadoAgregar",cartel);
 		
@@ -125,6 +132,7 @@ public class ControladorBiblioteca {
 		MV.setViewName("ModificarBiblioteca");
 		MV.addObject("libros",libros);
 		MV.addObject("biblioteca",biblioteca);
+		MV.addObject("classEstado",classEstado);
 		return MV;
 	}
 	
@@ -138,16 +146,19 @@ public class ControladorBiblioteca {
 		//}
 		
 		boolean resultado = servicioBiblioteca.eliminar(biblioteca);
-		
 		String mensaje = "Error al eliminar Biblioteca";
+		String classEstado = "alertDanger";
+		
 		if(resultado) {
 			mensaje = "Biblioteca eliminada";
+			classEstado = "alertSuccess";
 		}
 		
 		List<Biblioteca> bibliotecas = servicioBiblioteca.obtenerTodas(0);
 		MV.setViewName("Bibliotecas");
 		MV.addObject("biblioteca", bibliotecas);
 		MV.addObject("mensaje", mensaje);
+		MV.addObject("classEstado", classEstado);
 		return MV;
 	}
 }

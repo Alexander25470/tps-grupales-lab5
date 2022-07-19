@@ -117,13 +117,18 @@ public class ControladorPrestamos {
 		Biblioteca biblioteca = prestamo.getBiblioteca();
 		boolean estado = servicioBiblioteca.marcarEnBiblioteco(biblioteca);
 		String mensaje = "Error al devolver libro";
+		String classEstado = "alertDanger";
+		
 		if(estado) {
 			mensaje = "Libro devuelto";
+			classEstado = "alertSuccess";
 		}
+		
 		List<Prestamo> prestamos = servicioPrestamo.obtenerTodos();
 		MV.setViewName("Prestamos");
 		MV.addObject("prestamos", prestamos);
 		MV.addObject("mensaje", mensaje);
+		MV.addObject("classEstado",classEstado);
 		return MV;
 	}
 }

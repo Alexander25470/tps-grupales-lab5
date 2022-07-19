@@ -163,14 +163,18 @@ public class ControladorCliente {
 		Cliente cliente = servicioCliente.cargarUno(idCliente);
 		boolean resultado = servicioCliente.eliminar(cliente);
 		String mensaje = "Error al eliminar cliente";
+		String classEstado = "alertDanger";
+		
 		if(resultado) {
 			mensaje = "Cliente eliminado";
+			classEstado = "alertSuccess";
 		}
 		
 		List<Cliente> clientes = servicioCliente.listarClientes("");
 		MV.setViewName("Clientes");
 		MV.addObject("clientes",clientes);
 		MV.addObject("mensaje", mensaje);
+		MV.addObject("classEstado", classEstado);
 		return MV;
 	}
 	

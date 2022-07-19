@@ -61,6 +61,32 @@ body {
 
 .buttonEdit:hover {opacity: 1}
 
+.alertSuccess {
+  padding: 20px;
+  background-color: #4CAF50;
+  color: white;
+}
+
+.alertDanger {
+  padding: 20px;
+  background-color: #fc4040;
+  color: white;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
 </style>
 </head>
 <body>
@@ -112,7 +138,15 @@ body {
 						</c:forEach>
 					</tbody>
 				</table>
-				<h2>${mensaje}</h2>
+			</div>
+			
+			<div class="row d-flex justify-content-center p-5">
+				<div class="col-6 d-flex justify-content-center">
+					<div class="${classEstado}">
+						<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+					  	${mensaje}
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
