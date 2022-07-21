@@ -41,12 +41,9 @@ public class ControladorInicio {
 			session.setAttribute("usuario", user);
 			MV.addObject("usuario", user);
 		} else {			
-			//cartel = "Credenciales incorrectas";
-			//classEstado = "alertDanger";
-			//session.removeAttribute("usuario");
-			
-			session.setAttribute("usuario", user);
-			MV.addObject("usuario", user);
+			cartel = "Credenciales incorrectas";
+			classEstado = "alertDanger";
+			session.removeAttribute("usuario");
 		}
 		
 		MV.addObject("cartel", cartel);

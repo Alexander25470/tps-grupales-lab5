@@ -106,7 +106,7 @@ body {
 			</div>
 		</div>
 		
-		<form action="altaBibliotecaPost.html" method="get">
+		<form action="altaBibliotecaPost.html" method="get" id="formulario">
 			<div class="row d-flex justify-content-center">
 				<div class="col-6 d-flex justify-content-center">
 					<div class="input-group mb-3">
@@ -131,19 +131,49 @@ body {
 			
 			<div class="row d-flex justify-content-center">
 				<div class="col-6 d-flex justify-content-center">
-					<input class="buttonSuccess" type="submit" name="btnAgregarPersona" value="Guardar">
+					<input class="buttonSuccess" type="submit" name="btnAgregarPersona" value="Guardar" onclick="return fnValidarDatos()">
 				</div>
 			</div>
 			
 			<div class="row d-flex justify-content-center p-5">
 				<div class="col-6 d-flex justify-content-center">
-					<div class="${classEstado}">
-						<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-					  	${estadoAgregar}
+					<div class="${classEstado}" id="divAlert">
+						<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+						<div class="d-flex" id="alertMsj">
+							${estadoAgregar}
+						</div>
 					</div>
 				</div>
 			</div>
 		</form>
 	</div>
 </body>
+
+<script>
+
+function fnValidarDatos(){
+	var form = document.getElementById('formulario');
+	var data = new FormData(form);
+	var container = document.getElementById('alertMsj');
+	var text = '';
+	
+	for (var [key, value] of data) {
+	    if(value == ''){
+	    	document.getElementById("divAlert").classList.remove("alertDanger");
+	    	document.getElementById("divAlert").classList.remove("alertSuccess");
+	    	document.getElementById("divAlert").classList.add("alertDanger");
+    		container.innerText = '';
+    		text = document.createTextNode('Complete todos los campos');
+	    	container.appendChild(text);
+	    	document.getElementById("divAlert").removeAttribute("style");
+	    	
+	    	return false;
+	    }
+	}
+	
+	return true;
+}
+
+</script>
+
 </html>

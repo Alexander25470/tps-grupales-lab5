@@ -129,7 +129,7 @@ body {
 			</div>
 			<div class="row">
 				<div class="col-12 d-flex justify-content-center p-2">
-					<input class="buttonSuccess" type="submit" value="Aceptar">
+					<input class="buttonSuccess" type="submit" value="Ingresar">
 				</div>
 			</div>
 			
